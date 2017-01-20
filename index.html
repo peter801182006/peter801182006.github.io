@@ -8,8 +8,9 @@
 <button onclick="myFunction()">OK</button>
 
 <p>If the number is less than 0 or greater than 3000, an error message will be displayed.</p>
-
+<p>天干:</p>
 <p id="demo"></p>
+<p>地支:</p>
 <p id="demo2"></p>
 <script>
 function myFunction() {
@@ -18,9 +19,30 @@ function myFunction() {
         document.getElementById("demo").innerHTML = inpObj.validationMessage;
     } else {
         document.getElementById("demo").innerHTML = "Input OK";
-        if (inpObj.value%2==0) {
-           document.getElementById("demo2").innerHTML = "申";
-        }
+        if (inpObj.value%10==0) document.getElementById("demo").innerHTML = "庚";
+        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "辛";
+        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "壬";
+        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "癸";
+        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "甲";
+        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "乙";
+        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "丙";
+        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "丁";
+        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "戊";
+        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "己";
+
+        if (inpObj.value%12==0) document.getElementById("demo2").innerHTML = "申";
+        else if(inpObj.value%12==1) document.getElementById("demo2").innerHTML = "酉";
+        else if(inpObj.value%12==2) document.getElementById("demo2").innerHTML = "戌";
+        else if(inpObj.value%12==3) document.getElementById("demo2").innerHTML = "亥";
+        else if(inpObj.value%12==4) document.getElementById("demo2").innerHTML = "子";
+        else if(inpObj.value%12==5) document.getElementById("demo2").innerHTML = "丑";
+        else if(inpObj.value%12==6) document.getElementById("demo2").innerHTML = "寅";
+        else if(inpObj.value%12==7) document.getElementById("demo2").innerHTML = "卯";
+        else if(inpObj.value%12==8) document.getElementById("demo2").innerHTML = "辰";
+        else if(inpObj.value%12==9) document.getElementById("demo2").innerHTML = "巳";
+        else if(inpObj.value%12==10) document.getElementById("demo2").innerHTML = "午";
+        else if(inpObj.value%12==11) document.getElementById("demo2").innerHTML = "未";
+        
         
     } 
 } 
