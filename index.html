@@ -25,6 +25,8 @@
 <p id="demo2"></p>
 <p>該年春分點:</p>
 <p id="demo3"></p>
+<p>該日儒略日:</p>	
+<p id="demo4"></p>	
 <script>
     var inpObj = document.getElementById("yid");
     var inpObj2 = document.getElementById("mid");
@@ -71,8 +73,9 @@ function myFunction() {
         else if(inpObj.value%12==11) document.getElementById("demo2").innerHTML = "未";
         
     }    
-	var oe
+	
 	document.getElementById("demo3").innerHTML =VE(inpObj.value);
+	document.getElementById("demo4").innerHTML =Jdays(op,inpObj.value,inpObj2.value,inpObj3.value,inpObj4.value+(inpObj5.value/60))
 }
      
 function VE(yy){//计算指定年的春分点
