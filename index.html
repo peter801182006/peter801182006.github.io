@@ -23,10 +23,21 @@
 <p id="demo"></p>
 <p>地支:</p>
 <p id="demo2"></p>
+<p>該年春分點:</p>
+<p id="demo3"></p>
 <script>
     var inpObj = document.getElementById("yid");
     var inpObj2 = document.getElementById("mid");
     var inpObj3 = document.getElementById("did");
+    var inpObj4= document.getElementById("hid");
+    var inpObj5= document.getElementById("miid");
+    var synmonth = 29.530588853;     //synodic month (new Moon to new Moon)
+    var ptsa = new Array(485, 203, 199, 182, 156, 136, 77, 74, 70, 58, 52, 50, 45, 44, 29, 18, 17, 16, 14, 12, 12, 12, 9, 8);
+    var ptsb = new Array(324.96, 337.23, 342.08, 27.85, 73.14, 171.52, 222.54, 296.72, 243.58, 119.81, 297.17, 21.02, 247.54, 325.15, 60.93, 155.12, 288.79, 198.04, 199.76, 95.39, 287.11, 320.81, 227.73, 15.45);
+    var ptsc = new Array(1934.136, 32964.467, 20.186, 445267.112, 45036.886, 22518.443, 65928.934, 3034.906, 9037.513, 33718.147, 150.678, 2281.226, 29929.562, 31555.956, 4443.417, 67555.328, 4562.452, 62894.029, 31436.921, 14577.848, 31931.756, 34777.259, 1222.114, 16859.074);
+    var ctg = new Array("甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸");
+    var cdz = new Array("子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥");
+
 function myFunction() {
     
     
@@ -58,9 +69,59 @@ function myFunction() {
         else if(inpObj.value%12==10) document.getElementById("demo2").innerHTML = "午";
         else if(inpObj.value%12==11) document.getElementById("demo2").innerHTML = "未";
         
-        
-    } 
+    }    
+}
+     document.getElementById("demo3").innerHTML =VE(inpObj.value)
+function VE(yy){//计算指定年的春分点
+    var yx=yy;
+    if(yx>=1000 && yx<=8001){
+	   var m=(yx-2000)/1000;
+	   jdve=2451623.80984+365242.37404*m+0.05169*m*m-0.00411*m*m*m-0.00057*m*m*m*m;
+    }else{
+	    if(yx>=-8000 && yx<1000){
+		   m=yx/1000;
+		   jdve=1721139.29189+365242.1374*m+0.06134*m*m+0.00111*m*m*m-0.00071*m*m*m*m;
+	    }else{
+		   alter("超出计算能力范围");
+		   return false;
+	    }
+    }
+         return jdve
+    }
 } 
+function MeanJQJD(yy,jdve,ty,ini,num){
+   var ath=2*Math.PI/24;
+   var tx=(jdve-2451545)/365250;
+   var e=0.0167086342-0.0004203654*tx-0.0000126734*tx*tx+0.0000001444*tx*tx*tx-0.0000000002*tx*tx*tx*tx+0.0000000003*tx*tx*tx*tx*tx;
+   var tt=yy/1000;
+   var vp=111.25586939-17.0119934518333*tt-0.044091890166673*tt*tt-4.37356166661345E-04*tt*tt*tt+8.16716666602386E-06*tt*tt*tt*tt;
+   var rvp=vp*2*Math.PI/360;
+   var peri = new Array(30);
+   var i;
+   for(i=1;i<=(ini+num);i++){
+	    var flag=0;
+	    var th=ath*(i-1)+rvp;
+	    if(th>Math.PI && th<=3*Math.PI){
+		     th=2*Math.PI-th;
+		     flag=1;
+	    }
+	    if(th>3*Math.PI){
+		     th=4*Math.PI-th;
+		     flag=2;
+	    }
+	    var f1=2*Math.atan((Math.sqrt((1-e)/(1+e))*Math.tan(th/2)));
+	    var f2=(e*Math.sqrt(1-e*e)*Math.sin(th))/(1+e*Math.cos(th));
+	    var f=(f1-f2)*ty/2/Math.PI;
+	    if(flag==1) f=ty-f;
+	    if(flag==2) f=2*ty-f;
+	    peri[i]=f;
+   }
+   for(i=ini;i<=(ini+num);i++){
+	    jdez[i]=jdve+peri[i]-peri[1];
+   }
+   return true;
+}
+    
 </script>
 
 </body>
