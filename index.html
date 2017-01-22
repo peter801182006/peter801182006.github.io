@@ -2,10 +2,22 @@
 <html>
 <body>
 
-<p>請輸入年分:</p>
+<p>請輸入西元年分:</p>
 
-<input id="id1" type="number" min="0" max="3000" required>
+<input id="yid" type="number" min="0" max="3000" required>
+<p>請輸入月分:</p>
+
+<input id="mid" type="number" min="1" max="12" required>
+<p>請輸入日期:</p>
+
+<input id="did" type="number" min="1" max="31" required>
+<p>請輸入時間點:</p>
+
+<input id="hid" type="number" min="0" max="23" required><p>時</p>
+<input id="miid" type="number" min="0" max="59" required><p>分</p>
+
 <button onclick="myFunction()">OK</button>
+
 
 <p>天干:</p>
 <p id="demo"></p>
@@ -13,7 +25,9 @@
 <p id="demo2"></p>
 <script>
 function myFunction() {
-    var inpObj = document.getElementById("id1");
+    var inpObj = document.getElementById("yid");
+    var inpObj2 = document.getElementById("mid");
+    var inpObj3 = document.getElementById("did");
     if (inpObj.checkValidity() == false) {
         document.getElementById("demo").innerHTML = inpObj.validationMessage;
     } else {
