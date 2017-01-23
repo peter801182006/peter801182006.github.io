@@ -17,7 +17,7 @@
 <input id="miid" type="number" min="0" max="59" required><p>分</p>
 
 <button onclick="myFunction()">OK</button>
-
+<button onclick="ValidDate()">go</button>
 
 <p>天干:</p>
 <p id="demo"></p>
@@ -28,11 +28,11 @@
 <p>該日儒略日:</p>	
 <p id="demo4"></p>	
 <script>
-    var inpObj = document.getElementById("yid");
-    var inpObj2 = document.getElementById("mid");
-    var inpObj3 = document.getElementById("did");
-    var inpObj4= document.getElementById("hid");
-    var inpObj5= document.getElementById("miid");
+    var year = document.getElementById("yid");
+    var month = document.getElementById("mid");
+    var day = document.getElementById("did");
+    var hour= document.getElementById("hid");
+    var min= document.getElementById("miid");
     var synmonth = 29.530588853;     //synodic month (new Moon to new Moon)
     var ptsa = new Array(485, 203, 199, 182, 156, 136, 77, 74, 70, 58, 52, 50, 45, 44, 29, 18, 17, 16, 14, 12, 12, 12, 9, 8);
     var ptsb = new Array(324.96, 337.23, 342.08, 27.85, 73.14, 171.52, 222.54, 296.72, 243.58, 119.81, 297.17, 21.02, 247.54, 325.15, 60.93, 155.12, 288.79, 198.04, 199.76, 95.39, 287.11, 320.81, 227.73, 15.45);
@@ -44,38 +44,73 @@
 function myFunction() {
     
     
-    if (inpObj.checkValidity() == false) {
-        document.getElementById("demo").innerHTML = inpObj.validationMessage;
-    } else {
-        document.getElementById("demo").innerHTML = "Input OK";
-        if (inpObj.value%10==0) document.getElementById("demo").innerHTML = "庚";
-        else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "辛";
-        else if(inpObj.value%10==2) document.getElementById("demo").innerHTML = "壬";
-        else if(inpObj.value%10==3) document.getElementById("demo").innerHTML = "癸";
-        else if(inpObj.value%10==4) document.getElementById("demo").innerHTML = "甲";
-        else if(inpObj.value%10==5) document.getElementById("demo").innerHTML = "乙";
-        else if(inpObj.value%10==6) document.getElementById("demo").innerHTML = "丙";
-        else if(inpObj.value%10==7) document.getElementById("demo").innerHTML = "丁";
-        else if(inpObj.value%10==8) document.getElementById("demo").innerHTML = "戊";
-        else if(inpObj.value%10==9) document.getElementById("demo").innerHTML = "己";
+//     if (inpObj.checkValidity() == false) {
+//         document.getElementById("demo").innerHTML = inpObj.validationMessage;
+//     } else {
+//         document.getElementById("demo").innerHTML = "Input OK";
+//         if (inpObj.value%10==0) document.getElementById("demo").innerHTML = "庚";
+//         else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "辛";
+//         else if(inpObj.value%10==2) document.getElementById("demo").innerHTML = "壬";
+//         else if(inpObj.value%10==3) document.getElementById("demo").innerHTML = "癸";
+//         else if(inpObj.value%10==4) document.getElementById("demo").innerHTML = "甲";
+//         else if(inpObj.value%10==5) document.getElementById("demo").innerHTML = "乙";
+//         else if(inpObj.value%10==6) document.getElementById("demo").innerHTML = "丙";
+//         else if(inpObj.value%10==7) document.getElementById("demo").innerHTML = "丁";
+//         else if(inpObj.value%10==8) document.getElementById("demo").innerHTML = "戊";
+//         else if(inpObj.value%10==9) document.getElementById("demo").innerHTML = "己";
 
-        if (inpObj.value%12==0) document.getElementById("demo2").innerHTML = "申";
-        else if(inpObj.value%12==1) document.getElementById("demo2").innerHTML = "酉";
-        else if(inpObj.value%12==2) document.getElementById("demo2").innerHTML = "戌";
-        else if(inpObj.value%12==3) document.getElementById("demo2").innerHTML = "亥";
-        else if(inpObj.value%12==4) document.getElementById("demo2").innerHTML = "子";
-        else if(inpObj.value%12==5) document.getElementById("demo2").innerHTML = "丑";
-        else if(inpObj.value%12==6) document.getElementById("demo2").innerHTML = "寅";
-        else if(inpObj.value%12==7) document.getElementById("demo2").innerHTML = "卯";
-        else if(inpObj.value%12==8) document.getElementById("demo2").innerHTML = "辰";
-        else if(inpObj.value%12==9) document.getElementById("demo2").innerHTML = "巳";
-        else if(inpObj.value%12==10) document.getElementById("demo2").innerHTML = "午";
-        else if(inpObj.value%12==11) document.getElementById("demo2").innerHTML = "未";
+//         if (inpObj.value%12==0) document.getElementById("demo2").innerHTML = "申";
+//         else if(inpObj.value%12==1) document.getElementById("demo2").innerHTML = "酉";
+//         else if(inpObj.value%12==2) document.getElementById("demo2").innerHTML = "戌";
+//         else if(inpObj.value%12==3) document.getElementById("demo2").innerHTML = "亥";
+//         else if(inpObj.value%12==4) document.getElementById("demo2").innerHTML = "子";
+//         else if(inpObj.value%12==5) document.getElementById("demo2").innerHTML = "丑";
+//         else if(inpObj.value%12==6) document.getElementById("demo2").innerHTML = "寅";
+//         else if(inpObj.value%12==7) document.getElementById("demo2").innerHTML = "卯";
+//         else if(inpObj.value%12==8) document.getElementById("demo2").innerHTML = "辰";
+//         else if(inpObj.value%12==9) document.getElementById("demo2").innerHTML = "巳";
+//         else if(inpObj.value%12==10) document.getElementById("demo2").innerHTML = "午";
+//         else if(inpObj.value%12==11) document.getElementById("demo2").innerHTML = "未";
         
     }    
 	
 	document.getElementById("demo3").innerHTML =VE(inpObj.value);
 	document.getElementById("demo4").innerHTML =Jdays(true,inpObj.value,inpObj2.value,inpObj3.value,inpObj4.value+(inpObj5.value/60))
+}
+
+function ValidDate(){
+        var vd=ture;
+	if(month.checkValidity()==false){
+		alert("請輸入正確的月份");
+	   }else{
+
+        var u1=-(year.value%4==0);//能被4整除-1其餘為0
+        var u2=( (year.value%100==0)-(year%400==0) )&&(year>1582);//1582以後且年份能被100整除，但不能被400除盡的年份不是閏年
+        var u=u1+u2;
+        //計算當月天數 以7.5月為中央 與中央差+0.5%2餘數為1的才要加1 ，當月分為2才須減2或減1(閏年)
+        var vmd=30+( (Math.abs(month.value-7.5)+0.5) %2)-(month.value==2)*(2+u)
+        if(day.checkValidity()==false || day.value>vmd){
+		if(u==0 && month.value==2 && day.value==29){
+			if(hour.checkValidity()==false ||min.checkValidity()==false){
+			   alert("時間點不正確，請重新輸入");
+		        }else{
+                           alert("此年無閏月");
+			}
+		}else{
+		   	alert("時間點不正確，請重新輸入");
+                }
+	   vd=false;
+        }
+	if(year.value ==1582 && month.value==10 && day.value>=5 &&day.value<15||hour.checkValidity()==false ||min.checkValidity()==false){
+              alert("時間點不正確，請重新輸入");
+              vd=false;
+	}
+        if(vd==true)document.getElementById("demo").innerHTML = "甲";
+         return vd;
+		   
+}
+function Jtime(){
+	
 }
      
 function VE(yy){//计算指定年的春分点
