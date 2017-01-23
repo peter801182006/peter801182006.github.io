@@ -115,23 +115,24 @@ function ValidDate(){
 // function Jtime(){
 	
 // }
-     
-// function VE(yy){//计算指定年的春分点
-//     var yx=yy;
-//     if(yx>=1000 && yx<=8001){
-// 	   var m=(yx-2000)/1000;
-// 	   jdve=2451623.80984+365242.37404*m+0.05169*m*m-0.00411*m*m*m-0.00057*m*m*m*m;
-//     }else{
-// 	    if(yx>=-8000 && yx<1000){
-// 		   m=yx/1000;
-// 		   jdve=1721139.29189+365242.1374*m+0.06134*m*m+0.00111*m*m*m-0.00071*m*m*m*m;
-// 	    }else{
-// 		   alter("超出计算能力范围");
-// 		   return false;
-// 	    }
-//     }
-//          return jdve
-// }
+	
+//計算當年春分點
+function VE(yy){
+    var yx=yy;
+    if(yx>=1000 && yx<=8001){
+	   var m=(yx-2000)/1000;
+	   jdve=2451623.80984+365242.37404*m+0.05169*m*m-0.00411*m*m*m-0.00057*m*m*m*m;
+    }else{
+	    if(yx>=0 && yx<1000){
+		   m=yx/1000;
+		   jdve=1721139.29189+365242.1374*m+0.06134*m*m+0.00111*m*m*m-0.00071*m*m*m*m;
+	    }else{
+		   alter("超出计算能力范围");
+		   return false;
+	    }
+    }
+         return jdve
+}
 
 // function MeanJQJD(yy,jdve,ty,ini,num){
 //    var ath=2*Math.PI/24;
@@ -254,6 +255,48 @@ function ValidDate(){
 //         return jd;
 // }
 	
+	
+//////////////////////////////////////////////////////////
+// function Jtime(op,jd){//将儒略日转换为年月日时分秒
+// if(jd>=2299160.5 || op){
+// 	var y4h=146097;
+// 	var init=1721119.5;
+// }
+// else{
+// 	var y4h=146100;
+// 	var init=1721117.5;
+// }
+// var jdr=Math.floor(jd-init);
+// var yh=y4h/4;
+// var cen=Math.floor((jdr+0.75)/yh);
+// var d=Math.floor(jdr+0.75-cen*yh);
+// var ywl=1461/4;
+// var jy=Math.floor((d+0.75)/ywl);
+// d=Math.floor(d+0.75-ywl*jy+1);
+// var ml=153/5;
+// mp=Math.floor((d-0.5)/ml);
+// d=Math.floor((d-0.5)-30.6*mp+1);
+// var y=(100*cen)+jy;
+// var m=(mp+2)%12+1;
+// if(m<3) y=y+1;
+// var sd=Math.floor((jd+0.5-Math.floor(jd+0.5))*24*60*60+0.00005);
+// var mt=Math.floor(sd/60);
+// var ss=sd%60;
+// var hh=Math.floor(mt/60);
+// var mmt=mt%60;
+// var yy=Math.floor(y);
+// var mm=Math.floor(m);
+// var dd=Math.floor(d);
+// var yc="     "+yy;
+// yc=yc.substr(yc.length-5,5);
+// var dytm=yc;dytm+="年";
+// dytm+= ((mm < 10) ? "0" : "") + mm+"月";
+// dytm+= ((dd < 10) ? "0" : "") + dd+"日";
+// dytm+= ((hh < 10) ? "0" : "") + hh+"时";
+// dytm+= ((mmt < 10) ? "0" : "") + mmt+"分";
+// dytm+= ((ss < 10) ? "0" : "") + ss+"秒";
+// return dytm;
+// }
 	
 </script>
 
