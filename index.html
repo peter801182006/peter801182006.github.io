@@ -77,7 +77,7 @@ function myFunction() {
 	document.getElementById("demo3").innerHTML =VE(inpObj.value);
 	document.getElementById("demo4").innerHTML =Jdays(true,inpObj.value,inpObj2.value,inpObj3.value,inpObj4.value+(inpObj5.value/60))
 }
-
+//ValidDate()已於1/24上午6:35確認可執行
 function ValidDate(){
         var vd=true;
 	if(month.checkValidity()==false){
@@ -109,7 +109,7 @@ function ValidDate(){
 	}
         if(vd==true)document.getElementById("demo").innerHTML = "甲";
         else document.getElementById("demo").innerHTML = "乙";
-        //return vd;
+        return vd;
 		   
 }
 // function Jtime(){
