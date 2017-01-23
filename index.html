@@ -81,7 +81,8 @@ function myFunction() {
 function ValidDate(){
         var vd=true;
 	if(month.checkValidity()==false){
-		alert("請輸入正確的月份");
+	   alert("時間點不正確，請重新輸入");
+           vd=false;
 	}else{
 
            var u1=-(year.value%4==0);//能被4整除-1其餘為0
