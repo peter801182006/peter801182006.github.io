@@ -82,14 +82,14 @@ function ValidDate(){
         var vd=ture;
 	if(month.checkValidity()==false){
 		alert("請輸入正確的月份");
-	   }else{
+	}else{
 
-        var u1=-(year.value%4==0);//能被4整除-1其餘為0
-        var u2=( (year.value%100==0)-(year%400==0) )&&(year>1582);//1582以後且年份能被100整除，但不能被400除盡的年份不是閏年
-        var u=u1+u2;
-        //計算當月天數 以7.5月為中央 與中央差+0.5%2餘數為1的才要加1 ，當月分為2才須減2或減1(閏年)
-        var vmd=30+( (Math.abs(month.value-7.5)+0.5) %2)-(month.value==2)*(2+u)
-        if(day.checkValidity()==false || day.value>vmd){
+           var u1=-(year.value%4==0);//能被4整除-1其餘為0
+           var u2=( (year.value%100==0)-(year%400==0) )&&(year>1582);//1582以後且年份能被100整除，但不能被400除盡的年份不是閏年
+           var u=u1+u2;
+           //計算當月天數 以7.5月為中央 與中央差+0.5%2餘數為1的才要加1 ，當月分為2才須減2或減1(閏年)
+           var vmd=30+( (Math.abs(month.value-7.5)+0.5) %2)-(month.value==2)*(2+u)
+           if(day.checkValidity()==false || day.value>vmd){
 		if(u==0 && month.value==2 && day.value==29){
 			if(hour.checkValidity()==false ||min.checkValidity()==false){
 			   alert("時間點不正確，請重新輸入");
@@ -99,15 +99,16 @@ function ValidDate(){
 		}else{
 		   	alert("時間點不正確，請重新輸入");
                 }
-	   vd=false;
-        }
-	if(year.value ==1582 && month.value==10 && day.value>=5 &&day.value<15||hour.checkValidity()==false ||min.checkValidity()==false){
-              alert("時間點不正確，請重新輸入");
-              vd=false;
+	        vd=false;
+            }
+	    if(year.value ==1582 && month.value==10 && day.value>=5 &&day.value<15||hour.checkValidity()==false ||min.checkValidity()==false){
+                alert("時間點不正確，請重新輸入");
+                vd=false;
+	    }
 	}
         if(vd==true)document.getElementById("demo").innerHTML = "甲";
         else document.getElementById("demo").innerHTML = "乙";
-         //return vd;
+        //return vd;
 		   
 }
 // function Jtime(){
