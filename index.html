@@ -44,38 +44,38 @@
 function myFunction() {
     
     
-//     if (inpObj.checkValidity() == false) {
-//         document.getElementById("demo").innerHTML = inpObj.validationMessage;
-//     } else {
-//         document.getElementById("demo").innerHTML = "Input OK";
-//         if (inpObj.value%10==0) document.getElementById("demo").innerHTML = "庚";
-//         else if(inpObj.value%10==1) document.getElementById("demo").innerHTML = "辛";
-//         else if(inpObj.value%10==2) document.getElementById("demo").innerHTML = "壬";
-//         else if(inpObj.value%10==3) document.getElementById("demo").innerHTML = "癸";
-//         else if(inpObj.value%10==4) document.getElementById("demo").innerHTML = "甲";
-//         else if(inpObj.value%10==5) document.getElementById("demo").innerHTML = "乙";
-//         else if(inpObj.value%10==6) document.getElementById("demo").innerHTML = "丙";
-//         else if(inpObj.value%10==7) document.getElementById("demo").innerHTML = "丁";
-//         else if(inpObj.value%10==8) document.getElementById("demo").innerHTML = "戊";
-//         else if(inpObj.value%10==9) document.getElementById("demo").innerHTML = "己";
+    if (ValidDate()) {
+        document.getElementById("demo").innerHTML ="時間點不正確，請重新輸入" ;
+    } else {
+        document.getElementById("demo").innerHTML = "Input OK";
+        if (year.value%10==0) document.getElementById("demo").innerHTML = "庚";
+        else if(year.value%10==1) document.getElementById("demo").innerHTML = "辛";
+        else if(year.value%10==2) document.getElementById("demo").innerHTML = "壬";
+        else if(year.value%10==3) document.getElementById("demo").innerHTML = "癸";
+        else if(year.value%10==4) document.getElementById("demo").innerHTML = "甲";
+        else if(year.value%10==5) document.getElementById("demo").innerHTML = "乙";
+        else if(year.value%10==6) document.getElementById("demo").innerHTML = "丙";
+        else if(year.value%10==7) document.getElementById("demo").innerHTML = "丁";
+        else if(year.value%10==8) document.getElementById("demo").innerHTML = "戊";
+        else if(year.value%10==9) document.getElementById("demo").innerHTML = "己";
 
-//         if (inpObj.value%12==0) document.getElementById("demo2").innerHTML = "申";
-//         else if(inpObj.value%12==1) document.getElementById("demo2").innerHTML = "酉";
-//         else if(inpObj.value%12==2) document.getElementById("demo2").innerHTML = "戌";
-//         else if(inpObj.value%12==3) document.getElementById("demo2").innerHTML = "亥";
-//         else if(inpObj.value%12==4) document.getElementById("demo2").innerHTML = "子";
-//         else if(inpObj.value%12==5) document.getElementById("demo2").innerHTML = "丑";
-//         else if(inpObj.value%12==6) document.getElementById("demo2").innerHTML = "寅";
-//         else if(inpObj.value%12==7) document.getElementById("demo2").innerHTML = "卯";
-//         else if(inpObj.value%12==8) document.getElementById("demo2").innerHTML = "辰";
-//         else if(inpObj.value%12==9) document.getElementById("demo2").innerHTML = "巳";
-//         else if(inpObj.value%12==10) document.getElementById("demo2").innerHTML = "午";
-//         else if(inpObj.value%12==11) document.getElementById("demo2").innerHTML = "未";
+        if (year.value%12==0) document.getElementById("demo2").innerHTML = "申";
+        else if(year.value%12==1) document.getElementById("demo2").innerHTML = "酉";
+        else if(year.value%12==2) document.getElementById("demo2").innerHTML = "戌";
+        else if(year.value%12==3) document.getElementById("demo2").innerHTML = "亥";
+        else if(year.value%12==4) document.getElementById("demo2").innerHTML = "子";
+        else if(year.value%12==5) document.getElementById("demo2").innerHTML = "丑";
+        else if(year.value%12==6) document.getElementById("demo2").innerHTML = "寅";
+        else if(year.value%12==7) document.getElementById("demo2").innerHTML = "卯";
+        else if(year.value%12==8) document.getElementById("demo2").innerHTML = "辰";
+        else if(year.value%12==9) document.getElementById("demo2").innerHTML = "巳";
+        else if(year.value%12==10) document.getElementById("demo2").innerHTML = "午";
+        else if(year.value%12==11) document.getElementById("demo2").innerHTML = "未";
         
-//     }    
+    }    
 	
-	document.getElementById("demo3").innerHTML =VE(inpObj.value);
-	document.getElementById("demo4").innerHTML =Jdays(true,inpObj.value,inpObj2.value,inpObj3.value,inpObj4.value+(inpObj5.value/60))
+	document.getElementById("demo3").innerHTML =VE(year.value);
+	document.getElementById("demo4").innerHTML =Jdays(true,year.value,month.value,day.value,hour.value+(min.value/60))
 }
 //ValidDate()已於1/24上午6:35確認可執行
 function ValidDate(){
@@ -107,8 +107,8 @@ function ValidDate(){
                 vd=false;
 	    }
 	}
-        if(vd==true)document.getElementById("demo").innerHTML = "甲";
-        else document.getElementById("demo").innerHTML = "乙";
+//         if(vd==true)document.getElementById("demo").innerHTML = "甲";
+//         else document.getElementById("demo").innerHTML = "乙";
         return vd;
 		   
 }
