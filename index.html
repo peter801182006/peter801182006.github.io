@@ -346,34 +346,40 @@ for(i=1;i<=13;i++){
 }
 }
 
-function GetGZ(spcjd,yea,ptsa,ptsb,ptsc,tg,dz){
-var ty;
-var tm;
-var tmm;
+function GetGZ(spcjd,yy,mm,dd,hh,ptsa,ptsb,ptsc,tg,dz){
+var ty= yy;
+
+var td=dd;
+var dh=hh;
+
+
+	
 //比較求算節氣年ty,求出年干支
 var jr=new Array;
-ty = yea;
-
-GetPureJQsinceSpring(yea, ptsa,ptsb,ptsc,jr);	//取得自立春開始的非中氣之24節氣
+alert(spcjd);
+GetPureJQsinceSpring(yy, ptsa,ptsb,ptsc,jr);	//取得自立春開始的非中氣之24節氣
 if(spcjd <jr[0]){	//jr[0]為立春，約在2月5日前後，
-    ty = yea - 1;            //若小於jr[0],則屬於前一個節氣年
+    ty = yy - 1;            //若小於jr[0],則屬於前一個節氣年
     GetPureJQsinceSpring(ty, ptsa,ptsb,ptsc,jr);     //取得自立春開始的不含中氣之12節氣
     alert(ty);
 }
-
+var ygz;
 ygz = ((ty + 4712 + 24) % 60 + 60) % 60;
 tg[0] = ygz % 10;         //年干
 dz[0] = ygz % 12;         //年支
 
+	
+var j,tm,tmm;
 //比較求算節氣月,求出月干支
 for(j=0;j<=13;j++){
     if(jr[j] >= spcjd){ tm = j - 1; break;}		//已超過指定時刻，故應取前一個節氣
 }
+var mgz;
 tmm = ((ty + 4712) * 12 + (tm) + 60) % 60;
 mgz = (tmm + 50) % 60;
 tg[1] = mgz % 10 ;        //月干
 dz[1] = mgz % 12;         //月支
-
+var jda,thes,dayjd,dgz;
 //計算日柱之干支
 //jda = Jdays(op, yea, tmon, tday, thehou) + 0.5;     //加0.5是將起始點從正午改為從0點開始。
 jda=spcjd+0.5;
@@ -382,7 +388,7 @@ dayjd = Math.floor(jda) + thes / 86400;              //將秒數化為日數，�
 dgz = (Math.floor(dayjd + 49) % 60 + 60) % 60;
 tg[2] = dgz % 10;    //日干
 dz[2] = dgz % 12;    //日支
-
+var hgz
 //計算時柱之干支
 dh = dayjd * 12;
 hgz = (Math.floor(dh + 48) % 60 + 60) % 60;
