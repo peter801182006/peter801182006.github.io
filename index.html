@@ -46,7 +46,7 @@
 function myFunction() {
     
     
-    if (ValidDate()) {
+    if (!ValidDate()) {
         document.getElementById("demo").innerHTML ="時間點不正確，請重新輸入" ;
     } else {  
 	    Jday(false,yr,mh,dy,hr);
