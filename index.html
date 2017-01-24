@@ -246,7 +246,7 @@ function DeltaT(yy , mm ){
 }
 
 function Jdays(yr,mh,dy,hr){//將年月日時，轉换爲儒略日 
-        alert("時間點不正確，請重新輸入");
+        
         var yp=yr+Math.floor((mh-3)/10);
         if(((yr>1582) || (yr==1582 && mh>10) || (yr==1582 && mh==10 && dy>=15))){
 	     var init=1721119.5;
@@ -261,6 +261,7 @@ function Jdays(yr,mh,dy,hr){//將年月日時，轉换爲儒略日
         var jdm=mp*30+Math.floor((mp+1)*34/57);
         var jdd=dy-1;
         var jdh=hr/24;
+        alert(jdy);
         var jd=jdy+jdm+jdd+jdh+init;
         return jd;
 }
