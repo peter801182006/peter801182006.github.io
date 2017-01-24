@@ -79,11 +79,11 @@ function myFunction() {
 	var a=Jdays(false,year.value,month.value,day.value,hour.value+(min.value/60));
         var tg=new Array;
 	var dz=new Array;
-        GetGZ(op,spcjd,yea,ptsa,ptsb,ptsc,tg,dz);
-	document.getElementById("demo3").innerHTML =
+        GetGZ(false,a,year.value,ptsa,ptsb,ptsc,tg,dz);
+	document.getElementById("demo3").innerHTML =tg[0]+tg[1]+tg[2]+tg[3]+"";
 	
-	document.getElementById("demo4").innerHTML =
-}
+	document.getElementById("demo4").innerHTML =dz[0]+dz[1]+dz[2]+dz[3]+"";
+}3
 //ValidDate()已於1/24上午6:35確認可執行
 function ValidDate(){
         var vd=true;
