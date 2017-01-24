@@ -48,36 +48,41 @@ function myFunction() {
     
     if (ValidDate()) {
         document.getElementById("demo").innerHTML ="時間點不正確，請重新輸入" ;
-    } else {
-        document.getElementById("demo").innerHTML = "Input OK";
-        if (year.value%10==0) document.getElementById("demo").innerHTML = "庚";
-        else if(year.value%10==1) document.getElementById("demo").innerHTML = "辛";
-        else if(year.value%10==2) document.getElementById("demo").innerHTML = "壬";
-        else if(year.value%10==3) document.getElementById("demo").innerHTML = "癸";
-        else if(year.value%10==4) document.getElementById("demo").innerHTML = "甲";
-        else if(year.value%10==5) document.getElementById("demo").innerHTML = "乙";
-        else if(year.value%10==6) document.getElementById("demo").innerHTML = "丙";
-        else if(year.value%10==7) document.getElementById("demo").innerHTML = "丁";
-        else if(year.value%10==8) document.getElementById("demo").innerHTML = "戊";
-        else if(year.value%10==9) document.getElementById("demo").innerHTML = "己";
+    } else {  
+	    Jday(false,yr,mh,dy,hr));
+//         document.getElementById("demo").innerHTML = "Input OK";
+//         if (year.value%10==0) document.getElementById("demo").innerHTML = "庚";
+//         else if(year.value%10==1) document.getElementById("demo").innerHTML = "辛";
+//         else if(year.value%10==2) document.getElementById("demo").innerHTML = "壬";
+//         else if(year.value%10==3) document.getElementById("demo").innerHTML = "癸";
+//         else if(year.value%10==4) document.getElementById("demo").innerHTML = "甲";
+//         else if(year.value%10==5) document.getElementById("demo").innerHTML = "乙";
+//         else if(year.value%10==6) document.getElementById("demo").innerHTML = "丙";
+//         else if(year.value%10==7) document.getElementById("demo").innerHTML = "丁";
+//         else if(year.value%10==8) document.getElementById("demo").innerHTML = "戊";
+//         else if(year.value%10==9) document.getElementById("demo").innerHTML = "己";
 
-        if (year.value%12==0) document.getElementById("demo2").innerHTML = "申";
-        else if(year.value%12==1) document.getElementById("demo2").innerHTML = "酉";
-        else if(year.value%12==2) document.getElementById("demo2").innerHTML = "戌";
-        else if(year.value%12==3) document.getElementById("demo2").innerHTML = "亥";
-        else if(year.value%12==4) document.getElementById("demo2").innerHTML = "子";
-        else if(year.value%12==5) document.getElementById("demo2").innerHTML = "丑";
-        else if(year.value%12==6) document.getElementById("demo2").innerHTML = "寅";
-        else if(year.value%12==7) document.getElementById("demo2").innerHTML = "卯";
-        else if(year.value%12==8) document.getElementById("demo2").innerHTML = "辰";
-        else if(year.value%12==9) document.getElementById("demo2").innerHTML = "巳";
-        else if(year.value%12==10) document.getElementById("demo2").innerHTML = "午";
-        else if(year.value%12==11) document.getElementById("demo2").innerHTML = "未";
+//         if (year.value%12==0) document.getElementById("demo2").innerHTML = "申";
+//         else if(year.value%12==1) document.getElementById("demo2").innerHTML = "酉";
+//         else if(year.value%12==2) document.getElementById("demo2").innerHTML = "戌";
+//         else if(year.value%12==3) document.getElementById("demo2").innerHTML = "亥";
+//         else if(year.value%12==4) document.getElementById("demo2").innerHTML = "子";
+//         else if(year.value%12==5) document.getElementById("demo2").innerHTML = "丑";
+//         else if(year.value%12==6) document.getElementById("demo2").innerHTML = "寅";
+//         else if(year.value%12==7) document.getElementById("demo2").innerHTML = "卯";
+//         else if(year.value%12==8) document.getElementById("demo2").innerHTML = "辰";
+//         else if(year.value%12==9) document.getElementById("demo2").innerHTML = "巳";
+//         else if(year.value%12==10) document.getElementById("demo2").innerHTML = "午";
+//         else if(year.value%12==11) document.getElementById("demo2").innerHTML = "未";
         
     }    
+	var a=Jdays(false,year.value,month.value,day.value,hour.value+(min.value/60));
+        var tg=new Array;
+	var dz=new Array;
+        GetGZ(op,spcjd,yea,ptsa,ptsb,ptsc,tg,dz);
+	document.getElementById("demo3").innerHTML =
 	
-	document.getElementById("demo3").innerHTML =VE(year.value);
-	document.getElementById("demo4").innerHTML =Jdays(true,year.value,month.value,day.value,hour.value+(min.value/60))
+	document.getElementById("demo4").innerHTML =
 }
 //ValidDate()已於1/24上午6:35確認可執行
 function ValidDate(){
@@ -334,7 +339,48 @@ GetAdjustedJQ(yea, 0, 26, sjdjq);       //求出指定年節氣之JD值,從驚�
 for(i=1;i<=13;i++){
     jdpjq[i+1] = sjdjq[2 * i];
 }
-}	
+}
+
+function GetGZ(op,spcjd,yea,ptsa,ptsb,ptsc,tg,dz){
+//比較求算節氣年ty,求出年干支
+var jr=new Array;
+ty = yea;
+GetPureJQsinceSpring(yea, ptsa,ptsb,ptsc,jr);	//取得自立春開始的非中氣之24節氣
+if(spcjd <jr[0]){	//jr[0]為立春，約在2月5日前後，
+    ty = yea - 1;            //若小於jr[0],則屬於前一個節氣年
+    GetPureJQsinceSpring(ty, ptsa,ptsb,ptsc,jr);     //取得自立春開始的不含中氣之12節氣
+}
+
+ygz = ((ty + 4712 + 24) % 60 + 60) % 60;
+tg[0] = ygz % 10;         //年干
+dz[0] = ygz % 12;         //年支
+
+//比較求算節氣月,求出月干支
+for(j=0;j<=13;j++){
+    if(jr[j] >= spcjd){ tm = j - 1; break;}		//已超過指定時刻，故應取前一個節氣
+}
+tmm = ((ty + 4712) * 12 + (tm) + 60) % 60;
+mgz = (tmm + 50) % 60;
+tg[1] = mgz % 10 ;        //月干
+dz[1] = mgz % 12;         //月支
+
+//計算日柱之干支
+//jda = Jdays(op, yea, tmon, tday, thehou) + 0.5;     //加0.5是將起始點從正午改為從0點開始。
+jda=spcjd+0.5;
+thes = ((jda - Math.floor(jda)) * 86400) + 3600;    //將jd的小數部份化為秒，並加上起始點前移的一小時(3600秒)，取其整數值
+dayjd = Math.floor(jda) + thes / 86400;              //將秒數化為日數，加回到jd的整數部份
+dgz = (Math.floor(dayjd + 49) % 60 + 60) % 60;
+tg[2] = dgz % 10;    //日干
+dz[2] = dgz % 12;    //日支
+
+//計算時柱之干支
+dh = dayjd * 12;
+hgz = (Math.floor(dh + 48) % 60 + 60) % 60;
+tg[3] = hgz % 10;    //時干
+dz[3] = hgz % 12;    //時支
+
+
+}
 </script>
 
 </body>
