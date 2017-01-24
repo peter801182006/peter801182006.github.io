@@ -44,8 +44,7 @@
     var jdez=new Array;
 	
 function myFunction() {
-    
-    
+   
     if (!ValidDate()) {
         document.getElementById("demo").innerHTML ="時間點不正確，請重新輸入" ;
     } else {  
@@ -77,12 +76,12 @@ function myFunction() {
         
     }    
 	var a=Jdays(false,year.value,month.value,day.value,hour.value+(min.value/60));
-        var tg=new Array;
-	var dz=new Array;
-        GetGZ(true,a,year.value,ptsa,ptsb,ptsc,tg,dz);
-	document.getElementById("demo3").innerHTML =tg[0]+tg[1]+tg[2]+tg[3]+"1";
-	
-	document.getElementById("demo4").innerHTML =dz[0]+dz[1]+dz[2]+dz[3]+"1";
+//         var tg=new Array;
+// 	var dz=new Array;
+//         GetGZ(true,a,year.value,ptsa,ptsb,ptsc,tg,dz);
+// 	document.getElementById("demo3").innerHTML =tg[0]+tg[1]+tg[2]+tg[3]+"1";
+	document.getElementById("demo4").innerHTML =a;
+	document.getElementById("demo4").innerHTML ="gogo";
 }
 //ValidDate()已於1/24上午6:35確認可執行
 function ValidDate(){
