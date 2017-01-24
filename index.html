@@ -75,7 +75,7 @@ function myFunction() {
 //         else if(year.value%12==11) document.getElementById("demo2").innerHTML = "未";
         
     }    
-	var a=Jdays(false,year.value,month.value,day.value,hour.value+(min.value/60));
+	var a=Jdays(year.value,month.value,day.value,hour.value+(min.value/60));
 //         var tg=new Array;
 // 	var dz=new Array;
 //         GetGZ(true,a,year.value,ptsa,ptsb,ptsc,tg,dz);
@@ -245,14 +245,13 @@ function DeltaT(yy , mm ){
         return DeltaT
 }
 
-function Jdays(op,yr,mh,dy,hr){//將年月日時，轉换爲儒略日
-        if(yr<-400000 || yr>400000) return false;
+function Jdays(yr,mh,dy,hr){//將年月日時，轉换爲儒略日
+
         var yp=yr+Math.floor((mh-3)/10);
-        if(((yr>1582) || (yr==1582 && mh>10) || (yr==1582 && mh==10 && dy>=15)) || op){
+        if(((yr>1582) || (yr==1582 && mh>10) || (yr==1582 && mh==10 && dy>=15))){
 	     var init=1721119.5;
 	     var jdy=Math.floor(yp*365.25)-Math.floor(yp/100)+Math.floor(yp/400);
-        }
-        else{
+        }else{
 	    if((yr<1582) || (yr==1582 && mh<10) || (yr==1582 && mh==10 && dy<=4)){
 		var init=1721117.5;
 		var jdy=Math.floor(yp*365.25);
