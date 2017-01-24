@@ -28,11 +28,11 @@
 <p>該日儒略日:</p>	
 <p id="demo4"></p>	
 <script>
-    var year = document.getElementById("yid");
-    var month = document.getElementById("mid");
-    var day = document.getElementById("did");
-    var hour= document.getElementById("hid");
-    var min= document.getElementById("miid");
+    var year = document.getElementById("yid").value;
+    var month = document.getElementById("mid").value;
+    var day = document.getElementById("did").value;
+    var hour= document.getElementById("hid").value;
+    var min= document.getElementById("miid").value;
     var synmonth = 29.530588853;     //synodic month (new Moon to new Moon)
 //偏移量參數:
     var ptsa = new Array(485, 203, 199, 182, 156, 136, 77, 74, 70, 58, 52, 50, 45, 44, 29, 18, 17, 16, 14, 12, 12, 12, 9, 8);
@@ -75,7 +75,7 @@ function myFunction() {
 //         else if(year.value%12==11) document.getElementById("demo2").innerHTML = "未";
         
     }    
-	var a=Jdays(year.value,month.value,day.value,hour.value+(min.value/60));
+	var a=Jdays(year,month,day,hour+(min/60));
 //         var tg=new Array;
 // 	var dz=new Array;
 //         GetGZ(true,a,year.value,ptsa,ptsb,ptsc,tg,dz);
