@@ -28,6 +28,9 @@
 <p>該日儒略日:</p>	
 <p id="demo4"></p>	
 <script>
+//日誌0:1/23
+//日誌1:1/24 20:00-23:50
+//日誌2:1/25 6:30-07:09 變數進不去
     var year = document.getElementById("yid");
     var month = document.getElementById("mid");
     var day = document.getElementById("did");
@@ -83,6 +86,7 @@ function myFunction() {
 	var a=Jdays(yy,mm,dd,hh+(mimi/60));
         var tg=new Array;
 	var dz=new Array;
+        //1/25 07:09 yy進不去
          GetGZ(a,yy,ptsa,ptsb,ptsc,tg,dz);
 	document.getElementById("demo3").innerHTML =tg[0]+","+tg[1]+","+tg[2]+","+tg[3];
 
@@ -345,8 +349,8 @@ for(i=1;i<=13;i++){
     jdpjq[i+1] = sjdjq[2 * i];
 }
 }
-
-function GetGZ(spcjd,yy,ptsa,ptsb,ptsc,tg,dz){
+// 1/25 07:05 bug變數進不去
+function GetGZ(spcjd,ya,ptsa,ptsb,ptsc,tg,dz){
 var ty;
 
 var td;
@@ -356,11 +360,11 @@ var dh;
 	
 //比較求算節氣年ty,求出年干支
 var jr=new Array;
-alert(spcjd+" " +yy);
-GetPureJQsinceSpring(yy, ptsa,ptsb,ptsc,jr);	//取得自立春開始的非中氣之24節氣
+alert(spcjd+","+ya);
+GetPureJQsinceSpring(ya, ptsa,ptsb,ptsc,jr);	//取得自立春開始的非中氣之24節氣
 if(spcjd <jr[0]){	//jr[0]為立春，約在2月5日前後，
-    ty = yy - 1;
-    alert(ty);            //若小於jr[0],則屬於前一個節氣年
+    ty = ya - 1;
+    alert("到前一年"+ty);            //若小於jr[0],則屬於前一個節氣年
     GetPureJQsinceSpring(ty, ptsa,ptsb,ptsc,jr);     //取得自立春開始的不含中氣之12節氣
     
 }
