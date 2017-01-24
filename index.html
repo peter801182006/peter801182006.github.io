@@ -83,10 +83,10 @@ function myFunction() {
 	var a=Jdays(yy,mm,dd,hh+(mimi/60));
         var tg=new Array;
 	var dz=new Array;
-         GetGZ(true,a,yy,ptsa,ptsb,ptsc,tg,dz);
+         GetGZ(a,yy,ptsa,ptsb,ptsc,tg,dz);
 	document.getElementById("demo3").innerHTML =tg[0]+","+tg[1]+","+tg[2]+","+tg[3];
 
-	document.getElementById("demo4").innerHTML ="gogo";
+	document.getElementById("demo4").innerHTML =dz[0]+","+dz[1]+","+dz[2]+","+dz[3];
 }
 //ValidDate()已於1/24上午6:35確認可執行
 function ValidDate(){
@@ -346,18 +346,19 @@ for(i=1;i<=13;i++){
 }
 }
 
-function GetGZ(op,spcjd,yea,ptsa,ptsb,ptsc,tg,dz){
+function GetGZ(spcjd,yea,ptsa,ptsb,ptsc,tg,dz){
 var ty;
 var tm;
 var tmm;
 //比較求算節氣年ty,求出年干支
 var jr=new Array;
 ty = yea;
-alert(ty);
+
 GetPureJQsinceSpring(yea, ptsa,ptsb,ptsc,jr);	//取得自立春開始的非中氣之24節氣
 if(spcjd <jr[0]){	//jr[0]為立春，約在2月5日前後，
     ty = yea - 1;            //若小於jr[0],則屬於前一個節氣年
     GetPureJQsinceSpring(ty, ptsa,ptsb,ptsc,jr);     //取得自立春開始的不含中氣之12節氣
+    alert(ty);
 }
 
 ygz = ((ty + 4712 + 24) % 60 + 60) % 60;
