@@ -31,25 +31,25 @@
 //日誌0:1/23
 //日誌1:1/24 20:00-23:50
 //日誌2:1/25 6:30-07:09 變數進不去
-    var year = document.getElementById("yid");
-    var month = document.getElementById("mid");
-    var day = document.getElementById("did");
-    var hour= document.getElementById("hid");
-    var min= document.getElementById("miid");
-    var yy =year.value;
-    var mm = month.value;
-    var dd = day.value;
-    var hh= hour.value;
-    var mimi= min.value;
+     year = document.getElementById("yid");
+     month = document.getElementById("mid");
+     day = document.getElementById("did");
+     hour= document.getElementById("hid");
+     min= document.getElementById("miid");
+     yy =year.value;
+     mm = month.value;
+     dd = day.value;
+     hh= hour.value;
+     mimi= min.value;
     var synmonth = 29.530588853;     //synodic month (new Moon to new Moon)
 //偏移量參數:
-    var ptsa = new Array(485, 203, 199, 182, 156, 136, 77, 74, 70, 58, 52, 50, 45, 44, 29, 18, 17, 16, 14, 12, 12, 12, 9, 8);
-    var ptsb = new Array(324.96, 337.23, 342.08, 27.85, 73.14, 171.52, 222.54, 296.72, 243.58, 119.81, 297.17, 21.02, 247.54, 325.15, 60.93, 155.12, 288.79, 198.04, 199.76, 95.39, 287.11, 320.81, 227.73, 15.45);
-    var ptsc = new Array(1934.136, 32964.467, 20.186, 445267.112, 45036.886, 22518.443, 65928.934, 3034.906, 9037.513, 33718.147, 150.678, 2281.226, 29929.562, 31555.956, 4443.417, 67555.328, 4562.452, 62894.029, 31436.921, 14577.848, 31931.756, 34777.259, 1222.114, 16859.074);
+     ptsa = new Array(485, 203, 199, 182, 156, 136, 77, 74, 70, 58, 52, 50, 45, 44, 29, 18, 17, 16, 14, 12, 12, 12, 9, 8);
+     ptsb = new Array(324.96, 337.23, 342.08, 27.85, 73.14, 171.52, 222.54, 296.72, 243.58, 119.81, 297.17, 21.02, 247.54, 325.15, 60.93, 155.12, 288.79, 198.04, 199.76, 95.39, 287.11, 320.81, 227.73, 15.45);
+     ptsc = new Array(1934.136, 32964.467, 20.186, 445267.112, 45036.886, 22518.443, 65928.934, 3034.906, 9037.513, 33718.147, 150.678, 2281.226, 29929.562, 31555.956, 4443.417, 67555.328, 4562.452, 62894.029, 31436.921, 14577.848, 31931.756, 34777.259, 1222.114, 16859.074);
 //
     var ctg = new Array("甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸");
     var cdz = new Array("子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥");
-    var jdez=new Array;
+     jdez=new Array;
 	
 function myFunction() {
    
