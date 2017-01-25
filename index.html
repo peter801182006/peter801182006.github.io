@@ -31,16 +31,17 @@
 //日誌0:1/23
 //日誌1:1/24 20:00-23:50
 //日誌2:1/25 6:30-07:09 變數進不去
-     year = document.getElementById("yid");
-     month = document.getElementById("mid");
-     day = document.getElementById("did");
-     hour= document.getElementById("hid");
-     min= document.getElementById("miid");
-     yy =year.value;
-     mm = month.value;
-     dd = day.value;
-     hh= hour.value;
-     mimi= min.value;
+     var year = document.getElementById("yid");
+     var month = document.getElementById("mid");
+     var day = document.getElementById("did");
+     var hour= document.getElementById("hid");
+     var min= document.getElementById("miid");
+     var yy =year.value;
+     var mm = month.value;
+     var dd = day.value;
+     var hh= hour.value;
+     var mimi= min.value;
+     alert(yy);
     var synmonth = 29.530588853;     //synodic month (new Moon to new Moon)
 //偏移量參數:
      ptsa = new Array(485, 203, 199, 182, 156, 136, 77, 74, 70, 58, 52, 50, 45, 44, 29, 18, 17, 16, 14, 12, 12, 12, 9, 8);
@@ -84,7 +85,7 @@ function myFunction() {
         
     }    
 	//1/25 07:09 yy進不去
-        alert(yy);
+        
 	var a=Jdays(yy,mm,dd,hh+(mimi/60));
         var tg=new Array;
 	var dz=new Array;
