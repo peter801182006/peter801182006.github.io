@@ -696,16 +696,155 @@ jda=spcjd+0.5;
 thes = ((jda - Math.floor(jda)) * 86400) + 3600;    //將jd的小數部份化為秒，並加上起始點前移的一小時(3600秒)，取其整數值
 dayjd = Math.floor(jda) + thes / 86400;              //將秒數化為日數，加回到jd的整數部份
 dgz = (Math.floor(dayjd + 49) % 60 + 60) % 60;
-tg[2] = dgz % 10;    //日干
-dz[2] = dgz % 12;    //日支
+var dtg=dgz % 10;
+var ddz=dgz % 12;
+	switch(dtg){
+		case 0:
+			tg[2] ="甲";
+			break;
+		case 1:
+			tg[2] ="乙";
+			break;
+		case 2:
+			tg[2] ="丙";
+			break;
+		case 3:
+			tg[2] ="丁";
+			break;
+		case 4:
+			tg[2] ="戊";
+			break;
+		case 5:
+			tg[2] ="己";
+			break;
+		case 6:
+			tg[2] ="庚";
+			break;
+		case 7:
+			tg[2] ="辛";
+			break;
+		case 8:
+			tg[2] ="壬";
+			break;
+		case 9:
+			tg[2] ="癸";
+			break;
+	       }
+	switch(ddz){
+		case 0:
+			dz[2] ="子";
+			break;
+		case 1:
+			dz[2] ="丑";
+			break;
+		case 2:
+			dz[2] ="寅";
+			break;
+		case 3:
+			dz[2] ="卯";
+			break;
+		case 4:
+			dz[2] ="辰";
+			break;
+		case 5:
+			dz[2] ="巳";
+			break;
+		case 6:
+			dz[2] ="午";
+			break;
+		case 7:
+			dz[2] ="未";
+			break;
+		case 8:
+			dz[2] ="申";
+			break;
+		case 9:
+			dz[2] ="酉";
+			break;
+		case 10:
+			dz[2] ="戌";
+			break;
+		case 11:
+			dz[2] ="亥";
+			break;
+	       }
+
 var hgz
 //計算時柱之干支
 dh = dayjd * 12;
 hgz = (Math.floor(dh + 48) % 60 + 60) % 60;
-tg[3] = hgz % 10;    //時干
-dz[3] = hgz % 12;    //時支
-
-
+var htg = hgz % 10;    //時干
+var hdz[3] = hgz % 12;    //時支
+	switch(htg){
+		case 0:
+			tg[2] ="甲";
+			break;
+		case 1:
+			tg[2] ="乙";
+			break;
+		case 2:
+			tg[2] ="丙";
+			break;
+		case 3:
+			tg[2] ="丁";
+			break;
+		case 4:
+			tg[2] ="戊";
+			break;
+		case 5:
+			tg[2] ="己";
+			break;
+		case 6:
+			tg[2] ="庚";
+			break;
+		case 7:
+			tg[2] ="辛";
+			break;
+		case 8:
+			tg[2] ="壬";
+			break;
+		case 9:
+			tg[2] ="癸";
+			break;
+	       }
+	switch(hdz){
+		case 0:
+			dz[2] ="子";
+			break;
+		case 1:
+			dz[2] ="丑";
+			break;
+		case 2:
+			dz[2] ="寅";
+			break;
+		case 3:
+			dz[2] ="卯";
+			break;
+		case 4:
+			dz[2] ="辰";
+			break;
+		case 5:
+			dz[2] ="巳";
+			break;
+		case 6:
+			dz[2] ="午";
+			break;
+		case 7:
+			dz[2] ="未";
+			break;
+		case 8:
+			dz[2] ="申";
+			break;
+		case 9:
+			dz[2] ="酉";
+			break;
+		case 10:
+			dz[2] ="戌";
+			break;
+		case 11:
+			dz[2] ="亥";
+			break;
+	       }
 }
 </script>
 
