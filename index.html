@@ -83,11 +83,12 @@ function myFunction() {
 //         else if(year.value%12==11) document.getElementById("demo2").innerHTML = "未";
         
     }    
+	//1/25 07:09 yy進不去
+        alert(yy);
 	var a=Jdays(yy,mm,dd,hh+(mimi/60));
         var tg=new Array;
 	var dz=new Array;
-        //1/25 07:09 yy進不去
-         alert(yy);
+
          GetGZ(a,yy,ptsa,ptsb,ptsc,tg,dz);
 	document.getElementById("demo3").innerHTML =tg[0]+","+tg[1]+","+tg[2]+","+tg[3];
 
