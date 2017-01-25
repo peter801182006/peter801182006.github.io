@@ -74,7 +74,6 @@ function myFunction() {
 function ValidDate(){
         var vd=true;
 	if(month.checkValidity()==false){
-// 	   alert("時間點不正確，請重新輸入");
            vd=false;
 	}else{
 
@@ -235,7 +234,6 @@ function DeltaT(yy , mm ){
 function Jdays( yr,mh,dy,hr ){//將年月日時，轉换爲儒略日 
         
         var yp=yr+Math.floor((mh-3)/10);
-        alert(yp);
         if(((yr>1582) || (yr==1582 && mh>10) || (yr==1582 && mh==10 && dy>=15))){
 	     var init=1721119.5;
 	     var jdy=Math.floor(yp*365.25)-Math.floor(yp/100)+Math.floor(yp/400);
@@ -329,25 +327,20 @@ for(i=1;i<=13;i++){
 }
 // 1/25 07:05 bug變數進不去
 function GetGZ(spcjd,ya,ptsa,ptsb,ptsc,tg,dz){
-var ty;
-
-var td;
-var dh;
-
-
+   var ty;
+   var td;
+   var dh;
 	
 //比較求算節氣年ty,求出年干支
-var jr=new Array;
-alert(spcjd+","+ya);
-GetPureJQsinceSpring(ya, ptsa,ptsb,ptsc,jr);	//取得自立春開始的非中氣之24節氣
-if(spcjd <jr[0]){	//jr[0]為立春，約在2月5日前後，
-    ty = ya - 1;
-    alert("到前一年"+ty);            //若小於jr[0],則屬於前一個節氣年
-    GetPureJQsinceSpring(ty, ptsa,ptsb,ptsc,jr);     //取得自立春開始的不含中氣之12節氣
-    
-}
+   var jr=new Array;
+   GetPureJQsinceSpring(ya, ptsa,ptsb,ptsc,jr);	//取得自立春開始的非中氣之24節氣
+   if(spcjd <jr[0]){	//jr[0]為立春，約在2月5日前後，
+        ty = ya - 1;
+       //若小於jr[0],則屬於前一個節氣年
+       GetPureJQsinceSpring(ty, ptsa,ptsb,ptsc,jr);     //取得自立春開始的不含中氣之12節氣  
+   }
 
-switch(ty%10){
+   switch(ty%10){
 	case 0:
 		tg[0]="庚";
 		break;
@@ -378,91 +371,89 @@ switch(ty%10){
 	case 9:
 		tg[0]="己";
 		break;
-       }
-switch(ty%12){
-	case 0:
-		dz[0]="申";
-		break;
-	case 1:
-		dz[0]="酉";
-		break;
-        case 2:
-		dz[0]="戌";
-		break;
-        case 3:
-		dz[0]="亥";
-		break;
-	case 4:
-		dz[0]="子";
-		break;
-	case 5:
-		dz[0]="丑";
-		break;
-        case 6:
-		dz[0]="寅";
-		break;
-	case 7:
-		dz[0]="卯";
-		break;
-	case 8:
-		dz[0]="辰";
-		break;
-	case 9:
-		dz[0]="巳";
-		break;
-	case 10:
-		dz[0]="午";
-		break;
-	case 11:
-		dz[0]="未";
-		break;
-}
-var j,tm,tmm;
-//比較求算節氣月,求出月干支
-for(j=0;j<=13;j++){
-    if(jr[j] >= spcjd){ tm = j - 1; break;}		//已超過指定時刻，故應取前一個節氣
-}
+      }
+	switch(ty%12){
+		case 0:
+			dz[0]="申";
+			break;
+		case 1:
+			dz[0]="酉";
+			break;
+		case 2:
+			dz[0]="戌";
+			break;
+		case 3:
+			dz[0]="亥";
+			break;
+		case 4:
+			dz[0]="子";
+			break;
+		case 5:
+			dz[0]="丑";
+			break;
+		case 6:
+			dz[0]="寅";
+			break;
+		case 7:
+			dz[0]="卯";
+			break;
+		case 8:
+			dz[0]="辰";
+			break;
+		case 9:
+			dz[0]="巳";
+			break;
+		case 10:
+			dz[0]="午";
+			break;
+		case 11:
+			dz[0]="未";
+			break;
+		}
+	var j,tm,tmm;
+	//比較求算節氣月,求出月干支
+	for(j=0;j<=13;j++){
+		if(jr[j] >= spcjd){ tm = j - 1; break;}		//已超過指定時刻，故應取前一個節氣
+	}
 
-
-switch(tm%12){
-
-        case 0:
-		dz[1]="寅";
-		break;
-	case 1:
-		dz[1]="卯";
-		break;
-	case 2:
-		dz[1]="辰";
-		break;
-	case 3:
-		dz[1]="巳";
-		break;
-	case 4:
-		dz[1]="午";
-		break;
-	case 5:
-		dz[1]="未";
-		break;
-	case 6:
-		dz[1]="申";
-		break;
-	case 7:
-		dz[1]="酉";
-		break;
-        case 8:
-		dz[1]="戌";
-		break;
-        case 9:
-		dz[1]="亥";
-		break;
-	case 10:
-		dz[1]="子";
-		break;
-	case 11:
-		dz[1]="丑";
-		break;
-}
+	switch(tm%12){
+		case 0:
+			dz[1]="寅";
+			break;
+		case 1:
+			dz[1]="卯";
+			break;
+		case 2:
+			dz[1]="辰";
+			break;
+		case 3:
+			dz[1]="巳";
+			break;
+		case 4:
+			dz[1]="午";
+			break;
+		case 5:
+			dz[1]="未";
+			break;
+		case 6:
+			dz[1]="申";
+			break;
+		case 7:
+			dz[1]="酉";
+			break;
+		case 8:
+			dz[1]="戌";
+			break;
+		case 9:
+			dz[1]="亥";
+			break;
+		case 10:
+			dz[1]="子";
+			break;
+		case 11:
+			dz[1]="丑";
+			break;
+	}
 	if(tg[0]=="甲"||tg[0]=="己"){
 		switch(tm%12){
 			case 0:
