@@ -371,36 +371,77 @@ if(spcjd <jr[0]){	//jr[0]為立春，約在2月5日前後，
     GetPureJQsinceSpring(ty, ptsa,ptsb,ptsc,jr);     //取得自立春開始的不含中氣之12節氣
     
 }
- var ygz;
-ygz = ((ty + 4712 + 24) % 60 + 60) % 60;
-tg[0] = ygz % 10;         //年干
-dz[0] = ygz % 12;         //年支
-// switch(ty%10){
-// 	case 0:tg[0]="庚"
-// 	case 1:tg[0]="辛"
-//         case 2:tg[0]="壬"	
-//         case 3:tg[0]="癸"
-// 	case 4:tg[0]="甲"
-// 	case 5:tg[0]="乙"
-//         case 6:tg[0]="丙"
-// 	case 7:tg[0]="丁"
-// 	case 8:tg[0]="戊"
-// 	case 9:tg[0]="己"
-//        }
-// switch(ty%12){
-// 	case 0:dz[0]="申"
-// 	case 1:dz[0]="酉"
-//         case 2:dz[0]="戌"	
-//         case 3:dz[0]="亥"
-// 	case 4:dz[0]="子"
-// 	case 5:dz[0]="丑"
-//         case 6:dz[0]="寅"
-// 	case 7:dz[0]="卯"
-// 	case 8:dz[0]="辰"
-// 	case 9:dz[0]="巳"
-// 	case 10:dz[0]="午"
-// 	case 11:dz[0]="未"
-// }
+
+switch(ty%10){
+	case 0:
+		tg[0]="庚";
+		break;
+	case 1:
+		tg[0]="辛";
+                break;
+        case 2:
+		tg[0]="壬";
+		break;
+        case 3:
+		tg[0]="癸";
+		break;
+	case 4:
+		tg[0]="甲";
+		break;
+	case 5:
+		tg[0]="乙";
+		break;
+        case 6:
+		tg[0]="丙";
+		break;
+	case 7:
+		tg[0]="丁";
+		break;
+	case 8:
+		tg[0]="戊";
+		break;
+	case 9:
+		tg[0]="己";
+		break;
+       }
+switch(ty%12){
+	case 0:
+		dz[0]="申";
+		break;
+	case 1:
+		dz[0]="酉";
+		break;
+        case 2:
+		dz[0]="戌";
+		break;
+        case 3:
+		dz[0]="亥";
+		break;
+	case 4:
+		dz[0]="子";
+		break;
+	case 5:
+		dz[0]="丑";
+		break;
+        case 6:
+		dz[0]="寅";
+		break;
+	case 7:
+		dz[0]="卯";
+		break;
+	case 8:
+		dz[0]="辰";
+		break;
+	case 9:
+		dz[0]="巳";
+		break;
+	case 10:
+		dz[0]="午";
+		break;
+	case 11:
+		dz[0]="未";
+		break;
+}
 var j,tm,tmm;
 //比較求算節氣月,求出月干支
 for(j=0;j<=13;j++){
