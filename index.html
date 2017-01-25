@@ -35,17 +35,17 @@
 　</tr>
 　<tr>
 　<td>天干</td>
-　<td> </td>
-  <td> </td>
-　<td> </td>
-  <td> </td>
+　<td id="hrtgdemo"> </td>
+  <td id="dytgdemo"> </td>
+　<td id="mhtgdemo"> </td>
+  <td id="yrtgdemo"> </td>
 　</tr>
   <tr>
   <td>地支</td>
-　<td> </td>
-  <td> </td>
-　<td> </td>
-  <td> </td>
+　<td id="hrdzdemo"> </td>
+  <td id="dydzdemo"> </td>
+　<td id="mhdzdemo"> </td>
+  <td id="yrdzdemo"> </td>
   </tr>
   <tr>
   <td>藏干</td>
@@ -89,7 +89,7 @@ function myFunction() {
      var dd =Number( day.value);
      var hh= Number(hour.value);
      var mimi= Number(min.value);
-     alert(typeof(yy));
+//      alert(typeof(yy));
     if (!ValidDate()) {
 //         document.getElementById("demo").innerHTML ="時間點不正確，請重新輸入" ;
 	    alert("時間點不正確，請重新輸入");
@@ -99,11 +99,15 @@ function myFunction() {
 	var dz=new Array;
 
          GetGZ(a,yy,ptsa,ptsb,ptsc,tg,dz);
-	document.getElementById("demo3").innerHTML =tg[0]+" "+tg[1]+","+tg[2]+","+tg[3];
-
-	document.getElementById("demo4").innerHTML =dz[0]+","+dz[1]+","+dz[2]+","+dz[3];
-
-        
+	    
+	document.getElementById("hrtgdemo").innerHTML =tg[3];    
+	document.getElementById("dytgdemo").innerHTML =tg[2];
+	document.getElementById("mhtgdemo").innerHTML =tg[1];
+        document.getElementById("yrtgdemo").innerHTML =tg[0];    
+	document.getElementById("hrdzdemo").innerHTML =dz[3];
+	document.getElementById("dydzdemo").innerHTML =dz[2];
+        document.getElementById("mhdzdemo").innerHTML =dz[1];
+	document.getElementById("yrdzdemo").innerHTML =dz[0]
     }    
 	//1/25 07:09 yy進不去
         
