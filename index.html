@@ -447,39 +447,252 @@ var j,tm,tmm;
 for(j=0;j<=13;j++){
     if(jr[j] >= spcjd){ tm = j - 1; break;}		//已超過指定時刻，故應取前一個節氣
 }
- var mgz;
-tmm = ((ty + 4712) * 12 + (tm) + 60) % 60;
-mgz = (tmm + 50) % 60;
-tg[1] = mgz % 10 ;        //月干
-dz[1] = mgz % 12;         //月支
+//  var mgz;
+// tmm = ((ty + 4712) * 12 + (tm) + 60) % 60;
+// mgz = (tmm + 50) % 60;
+// tg[1] = mgz % 10 ;        //月干
+// dz[1] = mgz % 12;         //月支
 
-// switch(tm%12){
+switch(tm%12){
 
-//         case 0:dz[1]="寅"
-// 	case 1:dz[1]="卯"
-// 	case 2:dz[1]="辰"
-// 	case 3:dz[1]="巳"
-// 	case 4:dz[1]="午"
-// 	case 5:dz[1]="未"
-// 	case 6:dz[1]="申"
-// 	case 7:dz[1]="酉"
-//         case 8:dz[1]="戌"	
-//         case 9:dz[1]="亥"
-// 	case 10:dz[1]="子"
-// 	case 11:dz[1]="丑"
-// }
-// 	if(tg[0]=="甲"||tg[0]=="己"){
-		
-// 		tg[1]="";
-// 	}else if(tg[0]=="乙"||tg[0]=="庚"){
-		
-// 	}else if(tg[0]=="丙"||tg[0]=="辛"){
-	
-// 	}else if(tg[0]=="丁"||tg[0]=="壬"){
-	
-// 	}else if(tg[0]=="戊"||tg[0]=="癸"){
-	
-// 	}
+        case 0:
+		dz[1]="寅";
+		break;
+	case 1:
+		dz[1]="卯";
+		break;
+	case 2:
+		dz[1]="辰";
+		break;
+	case 3:
+		dz[1]="巳";
+		break;
+	case 4:
+		dz[1]="午";
+		break;
+	case 5:
+		dz[1]="未";
+		break;
+	case 6:
+		dz[1]="申";
+		break;
+	case 7:
+		dz[1]="酉";
+		break;
+        case 8:
+		dz[1]="戌";
+		break;
+        case 9:
+		dz[1]="亥";
+		break;
+	case 10:
+		dz[1]="子";
+		break;
+	case 11:
+		dz[1]="丑";
+		break;
+}
+	if(tg[0]=="甲"||tg[0]=="己"){
+		switch(tm%12){
+			case 0:
+				tg[1]="丙";
+				break;
+			case 1:
+				tg[1]="丁";
+				break;
+			case 2:
+				tg[1]="戊";
+				break;
+			case 3:
+				tg[1]="己";
+				break;
+			case 4:
+				tg[1]="庚";
+				break;
+			case 5:
+				tg[1]="辛";
+				break;
+			case 6:
+				tg[1]="壬";
+				break;
+			case 7:
+				tg[1]="癸";
+				break;
+			case 8:
+				tg[1]="甲";
+				break;
+			case 9:
+				tg[1]="乙";
+				break;
+			case 10:
+				tg[1]="丙";
+				break;
+			case 11:
+				tg[1]="丁";
+				break;
+				
+	        }
+	}else if(tg[0]=="乙"||tg[0]=="庚"){
+		switch(tm%12){
+			case 0:
+				tg[1]="戊";
+				break;
+			case 1:
+				tg[1]="己";
+				break;
+			case 2:
+				tg[1]="庚";
+				break;
+			case 3:
+				tg[1]="辛";
+				break;
+			case 4:
+				tg[1]="壬";
+				break;
+			case 5:
+				tg[1]="癸";
+				break;
+			case 6:
+				tg[1]="甲";
+				break;
+			case 7:
+				tg[1]="乙";
+				break;
+			case 8:
+				tg[1]="丙";
+				break;
+			case 9:
+				tg[1]="丁";
+				break;
+			case 10:
+				tg[1]="戊";
+				break;
+			case 11:
+				tg[1]="己";
+				break;
+				
+	        }
+	}else if(tg[0]=="丙"||tg[0]=="辛"){
+		switch(tm%12){
+			case 0:
+				tg[1]="庚";
+				break;
+			case 1:
+				tg[1]="辛";
+				break;
+			case 2:
+				tg[1]="壬";
+				break;
+			case 3:
+				tg[1]="癸";
+				break;
+			case 4:
+				tg[1]="甲";
+				break;
+			case 5:
+				tg[1]="乙";
+				break;
+			case 6:
+				tg[1]="丙";
+				break;
+			case 7:
+				tg[1]="丁";
+				break;
+			case 8:
+				tg[1]="戊";
+				break;
+			case 9:
+				tg[1]="己";
+				break;
+			case 10:
+				tg[1]="庚";
+				break;
+			case 11:
+				tg[1]="辛";
+				break;
+				
+	        }
+	}else if(tg[0]=="丁"||tg[0]=="壬"){
+		switch(tm%12){
+			case 0:
+				tg[1]="壬";
+				break;
+			case 1:
+				tg[1]="癸";
+				break;
+			case 2:
+				tg[1]="甲";
+				break;
+			case 3:
+				tg[1]="乙";
+				break;
+			case 4:
+				tg[1]="丙";
+				break;
+			case 5:
+				tg[1]="丁";
+				break;
+			case 6:
+				tg[1]="戊";
+				break;
+			case 7:
+				tg[1]="己";
+				break;
+			case 8:
+				tg[1]="庚";
+				break;
+			case 9:
+				tg[1]="辛";
+				break;
+			case 10:
+				tg[1]="壬";
+				break;
+			case 11:
+				tg[1]="癸";
+				break;
+				
+	        }
+	}else if(tg[0]=="戊"||tg[0]=="癸"){
+		switch(tm%12){
+			case 0:
+				tg[1]="甲";
+				break;
+			case 1:
+				tg[1]="乙";
+				break;
+			case 2:
+				tg[1]="丙";
+				break;
+			case 3:
+				tg[1]="丁";
+				break;
+			case 4:
+				tg[1]="戊";
+				break;
+			case 5:
+				tg[1]="己";
+				break;
+			case 6:
+				tg[1]="庚";
+				break;
+			case 7:
+				tg[1]="辛";
+				break;
+			case 8:
+				tg[1]="壬";
+				break;
+			case 9:
+				tg[1]="癸";
+				break;
+			case 10:
+				tg[1]="甲";
+				break;
+			case 11:
+				tg[1]="乙";
+				break;
+				
+	        }	
+	}
 var jda,thes,dayjd,dgz;
 //計算日柱之干支
 //jda = Jdays(op, yea, tmon, tday, thehou) + 0.5;     //加0.5是將起始點從正午改為從0點開始。
