@@ -18,14 +18,39 @@
 
 <button onclick="myFunction()">OK</button>
 
-
+<table border="1">
+　<tr>
+　<td>這裡是第一行的第一個欄位</td>
+　<td>這裡是第一行的第二個欄位</td>
+  <td>這裡是第一行的第一個欄位</td>
+　<td>這裡是第一行的第二個欄位</td>
+　</tr>
+　<tr>
+　<td>這裡是第一行的第一個欄位</td>
+　<td>這裡是第一行的第二個欄位</td>
+  <td>這裡是第一行的第一個欄位</td>
+　<td>這裡是第一行的第二個欄位</td>
+　</tr>
+  <tr>
+  <td>這裡是第一行的第一個欄位</td>
+　<td>這裡是第一行的第二個欄位</td>
+  <td>這裡是第一行的第一個欄位</td>
+　<td>這裡是第一行的第二個欄位</td>
+  </tr>
+  <tr>
+  <td>這裡是第一行的第一個欄位</td>
+　<td>這裡是第一行的第二個欄位</td>
+  <td>這裡是第一行的第一個欄位</td>
+　<td>這裡是第一行的第二個欄位</td>
+  </tr>
+</table>
 <p>天干:</p>
 <p id="demo"></p>
 <p>地支:</p>
 <p id="demo2"></p>
-<p>該年春分點:</p>
+<p>天干:</p>
 <p id="demo3"></p>
-<p>該日儒略日:</p>	
+<p>地支:</p>	
 <p id="demo4"></p>	
 <script>
 //日誌0:1/23
@@ -55,45 +80,23 @@ function myFunction() {
      var mimi= Number(min.value);
      alert(typeof(yy));
     if (!ValidDate()) {
-        document.getElementById("demo").innerHTML ="時間點不正確，請重新輸入" ;
+//         document.getElementById("demo").innerHTML ="時間點不正確，請重新輸入" ;
+	    alert("時間點不正確，請重新輸入");
     } else {  
-	    
-//         document.getElementById("demo").innerHTML = "Input OK";
-//         if (year.value%10==0) document.getElementById("demo").innerHTML = "庚";
-//         else if(year.value%10==1) document.getElementById("demo").innerHTML = "辛";
-//         else if(year.value%10==2) document.getElementById("demo").innerHTML = "壬";
-//         else if(year.value%10==3) document.getElementById("demo").innerHTML = "癸";
-//         else if(year.value%10==4) document.getElementById("demo").innerHTML = "甲";
-//         else if(year.value%10==5) document.getElementById("demo").innerHTML = "乙";
-//         else if(year.value%10==6) document.getElementById("demo").innerHTML = "丙";
-//         else if(year.value%10==7) document.getElementById("demo").innerHTML = "丁";
-//         else if(year.value%10==8) document.getElementById("demo").innerHTML = "戊";
-//         else if(year.value%10==9) document.getElementById("demo").innerHTML = "己";
-
-//         if (year.value%12==0) document.getElementById("demo2").innerHTML = "申";
-//         else if(year.value%12==1) document.getElementById("demo2").innerHTML = "酉";
-//         else if(year.value%12==2) document.getElementById("demo2").innerHTML = "戌";
-//         else if(year.value%12==3) document.getElementById("demo2").innerHTML = "亥";
-//         else if(year.value%12==4) document.getElementById("demo2").innerHTML = "子";
-//         else if(year.value%12==5) document.getElementById("demo2").innerHTML = "丑";
-//         else if(year.value%12==6) document.getElementById("demo2").innerHTML = "寅";
-//         else if(year.value%12==7) document.getElementById("demo2").innerHTML = "卯";
-//         else if(year.value%12==8) document.getElementById("demo2").innerHTML = "辰";
-//         else if(year.value%12==9) document.getElementById("demo2").innerHTML = "巳";
-//         else if(year.value%12==10) document.getElementById("demo2").innerHTML = "午";
-//         else if(year.value%12==11) document.getElementById("demo2").innerHTML = "未";
-        
-    }    
-	//1/25 07:09 yy進不去
-        
 	var a=Jdays(yy,mm,dd,hh+(mimi/60));
         var tg=new Array;
 	var dz=new Array;
 
          GetGZ(a,yy,ptsa,ptsb,ptsc,tg,dz);
-	document.getElementById("demo3").innerHTML =tg[0]+","+tg[1]+","+tg[2]+","+tg[3];
+	document.getElementById("demo3").innerHTML =tg[0]+" "+tg[1]+","+tg[2]+","+tg[3];
 
 	document.getElementById("demo4").innerHTML =dz[0]+","+dz[1]+","+dz[2]+","+dz[3];
+
+        
+    }    
+	//1/25 07:09 yy進不去
+        
+	
 }
 //ValidDate()已於1/24上午6:35確認可執行
 function ValidDate(){
