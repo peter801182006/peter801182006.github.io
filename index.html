@@ -18,51 +18,13 @@
 
 <button onclick="myFunction()">OK</button>
 
-<table border="1">
-　<tr>
-　<td> </td>
-　<td>時柱(果)</td>
-  <td>日柱(花)</td>
-　<td>月柱(苗)</td>
-  <td>年柱(根)</td>
-　</tr>
-  <tr>
-　<td>十神</td>
-　<td> </td>
-  <td> </td>
-　<td> </td>
-  <td> </td>
-　</tr>
-　<tr>
-　<td>天干</td>
-　<td id="hrtgdemo"> </td>
-  <td id="dytgdemo"> </td>
-　<td id="mhtgdemo"> </td>
-  <td id="yrtgdemo"> </td>
-　</tr>
-  <tr>
-  <td>地支</td>
-　<td id="hrdzdemo"> </td>
-  <td id="dydzdemo"> </td>
-　<td id="mhdzdemo"> </td>
-  <td id="yrdzdemo"> </td>
-  </tr>
-  <tr>
-  <td>藏干</td>
-　<td> </td>
-  <td> </td>
-　<td> </td>
-  <td> </td>
-  </tr>
-</table>
-<p>天干:</p>
+
+
+<p>主要屬性:</p>
 <p id="demo"></p>
-<p>地支:</p>
+<p>內心世界:</p>
 <p id="demo2"></p>
-<p>天干:</p>
-<p id="demo3"></p>
-<p>地支:</p>	
-<p id="demo4"></p>	
+	
 <script>
 //日誌0:1/23
 //日誌1:1/24 20:00-23:50
@@ -100,14 +62,9 @@ function myFunction() {
 
          GetGZ(a,yy,ptsa,ptsb,ptsc,tg,dz);
 	    
-	document.getElementById("hrtgdemo").innerHTML =tg[3];    
-	document.getElementById("dytgdemo").innerHTML =tg[2];
-	document.getElementById("mhtgdemo").innerHTML =tg[1];
-        document.getElementById("yrtgdemo").innerHTML =tg[0];    
-	document.getElementById("hrdzdemo").innerHTML =dz[3];
-	document.getElementById("dydzdemo").innerHTML =dz[2];
-        document.getElementById("mhdzdemo").innerHTML =dz[1];
-	document.getElementById("yrdzdemo").innerHTML =dz[0]
+	document.getElementById("demo").innerHTML  = tg[2];    
+	document.getElementById("demo2").innerHTML = dz[1];
+
     }    
 	//1/25 07:09 yy進不去
         
