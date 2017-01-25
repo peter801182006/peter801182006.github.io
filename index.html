@@ -774,7 +774,7 @@ var hgz
 dh = dayjd * 12;
 hgz = (Math.floor(dh + 48) % 60 + 60) % 60;
 var htg = hgz % 10;    //時干
-var hdz[3] = hgz % 12;    //時支
+var hdz= hgz % 12;    //時支
 	switch(htg){
 		case 0:
 			tg[2] ="甲";
