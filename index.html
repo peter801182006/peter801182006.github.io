@@ -15,7 +15,7 @@
 
 <input id="hid" type="number" min="0" max="23" required><p>時</p>
 <input id="miid" type="number" min="0" max="59" required><p>分</p>
-<p>性別: (請輸入男或女)</p>
+<p>性別: (請輸入男或女即可)</p>
 <input id="sexid" type="text">
 <br>
 <button onclick="myFunction()">OK</button>
@@ -24,8 +24,10 @@
 
 <p>主要屬性:</p>
 <p id="demo"></p>
+<p id="tgdemo"></p>
 <p>內心世界:</p>
 <p id="demo2"></p>
+<p id="dzdemo"></p>
 <p>幸運色</p>
 <p id="color"></p>
 <script>
@@ -67,7 +69,36 @@ function myFunction() {
 	    
 	document.getElementById("demo").innerHTML  = tg[2];    
 	document.getElementById("demo2").innerHTML = dz[1]; 
-        //幸運色  
+
+        //外在性格分析
+        if(tg[2]=="甲"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}else if(tg[2]=="乙"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}else if(tg[2]=="丙"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}else if(tg[2]=="丁"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}else if(tg[2]=="戊"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}else if(tg[2]=="己"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}else if(tg[2]=="庚"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}else if(tg[2]=="辛"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}else if(tg[2]=="壬"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}else if(tg[2]=="癸"){
+                  document.getElementById("tgdemo").innerHTML  =
+	}
+        //內在習性分析 
+	    if(dz[1]=="子"){
+
+	    }else if(dz[1]=="丑"){
+
+	}
+        //幸運色判斷  
         var sex=document.getElementById("sexid").value;
 	var sexbase=["",""];
         if(sex=="男"){sexbase[0]="與愛情運";}
