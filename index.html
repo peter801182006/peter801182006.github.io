@@ -15,8 +15,9 @@
 
 <input id="hid" type="number" min="0" max="23" required><p>時</p>
 <input id="miid" type="number" min="0" max="59" required><p>分</p>
-<p>性別: (請輸入男或女)</p><input id="sexid" type="text">
-
+<p>性別: (請輸入男或女)</p>
+<input id="sexid" type="text">
+<br>
 <button onclick="myFunction()">OK</button>
 
 
@@ -69,8 +70,8 @@ function myFunction() {
         //幸運色  
         var sex=document.getElementById("sexid").value;
 	var sexbase=["",""];
-        if(sex=="男"){sexbase[0]="愛情運";}
-        else if(sex=="女"){sexbase[1]="愛情運";}
+        if(sex=="男"){sexbase[0]="與愛情運";}
+        else if(sex=="女"){sexbase[1]="與愛情運";}
         else {alert("請輸入中文的性別");}
         var colorbase=["綠色系","粉紅、紅色系","黃色、咖啡色色系","銀白色系","藍黑色系"];   
         if(tg[2]=="甲"||tg[2]=="乙"){
