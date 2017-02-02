@@ -24,7 +24,8 @@
 <p id="demo"></p>
 <p>內心世界:</p>
 <p id="demo2"></p>
-	
+<p>幸運色</p>
+<p id="color"></p>
 <script>
 //日誌0:1/23
 //日誌1:1/24 20:00-23:50
@@ -63,7 +64,18 @@ function myFunction() {
          GetGZ(a,yy,ptsa,ptsb,ptsc,tg,dz);
 	    
 	document.getElementById("demo").innerHTML  = tg[2];    
-	document.getElementById("demo2").innerHTML = dz[1];
+	document.getElementById("demo2").innerHTML = dz[1]; 
+        
+        var colorbase[5]={"粉紅、紅色系","黃色、咖啡色色系","藍黑色系","綠色系","銀白色系"}
+        if(tg[2]=="甲"||tg[2]=="乙"){
+		
+                 document.getElementById("color").innerHTML=
+                  "求財運"+
+                  "求貴人"+
+                  "求考運"+
+                  "求才華"+ 
+	          "求身體健康"+
+        }
 
     }    
 	//1/25 07:09 yy進不去
