@@ -49,7 +49,31 @@
     var ctg = new Array("甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸");
     var cdz = new Array("子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥");
      jdez=new Array;
+    
+    var tgdata=[
+	    "陽木，人如大樹，庇蔭無數，有惻隱之心、上進心與植物般的韌性，能在逆境中開闢出屬於自己的一條路，<br>好華美的事物而有風雅的性格，進退有情有義，處事認真負責，<br>但缺乏應變能力，又因常煩惱故做事多老苦，適合當組織領導者。",
+	    "陰木，人如藤蔓，盤根錯節，富同情心，性情和藹，但內心佔有欲強, 雖有才能, 但常因為興趣廣泛，無法朝單一面向深入發展，以至於錯失良機，皮膚好，多俊男美女，適合幕後領導者。",
+	    "陽火，人如大火，熱力四射，朝氣蓬勃，熱情開朗，但性情急、比較健忘還含有適合各種社交活動, 但也易被誤解為好大喜功",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		""];
 	
+    var dzdata=["",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		""];
 function myFunction() {
      var yy =Number(year.value);
      var mm =Number( month.value);
@@ -72,31 +96,51 @@ function myFunction() {
 
         //外在性格分析
         if(tg[2]=="甲"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[0];
 	}else if(tg[2]=="乙"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[1];
 	}else if(tg[2]=="丙"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[2];
 	}else if(tg[2]=="丁"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[3];
 	}else if(tg[2]=="戊"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[4];
 	}else if(tg[2]=="己"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[5];
 	}else if(tg[2]=="庚"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[6];
 	}else if(tg[2]=="辛"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[7];
 	}else if(tg[2]=="壬"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[8];
 	}else if(tg[2]=="癸"){
-                  document.getElementById("tgdemo").innerHTML  =
+                  document.getElementById("tgdemo").innerHTML  =tgdata[9];
 	}
         //內在習性分析 
-	    if(dz[1]=="子"){
-
-	    }else if(dz[1]=="丑"){
-
+	if(dz[1]=="子"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[0];
+	}else if(dz[1]=="丑"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[1];
+	}else if(dz[1]=="寅"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[2];
+	}else if(dz[1]=="卯"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[3];
+	}else if(dz[1]=="辰"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[4];
+	}else if(dz[1]=="巳"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[5];
+	}else if(dz[1]=="午"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[6];
+	}else if(dz[1]=="未")
+		document.getElementById("dzdemo").innerHTML  =dzdata[7];
+	}else if(dz[1]=="申"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[8];
+	}else if(dz[1]=="酉"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[9];
+	}else if(dz[1]=="戌"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[10];
+	}else if(dz[1]=="亥"){
+		document.getElementById("dzdemo").innerHTML  =dzdata[11];
 	}
         //幸運色判斷  
         var sex=document.getElementById("sexid").value;
