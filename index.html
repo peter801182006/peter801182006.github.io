@@ -203,11 +203,10 @@ function myFunction() {
         var tda=Jdays(tdyy,tdmm,tddd,tdhh+(tdmimi/60));
         var tdtg=new Array;
 	var tddz=new Array;
-	GetGZ(tda,tdyy,ptsa,ptsb,ptsc,tdtg,tddz);
-　      document.getElementById("tengoddemo").innerHTML  =tdtg[3]+" "+tdtg[2]+" "+tdtg[1]+" "+tdtg[0];
-//         if(){
-	   
-// 	}
+	GetGZ(tda,tdyy,ptsa,ptsb,ptsc,tdtg,tddz);    
+	var tdid=tgtest(otg[2],tdtg[2]);
+	document.getElementById("tengoddemo").innerHTML  =tdid;
+	
     }    
     
 	
@@ -718,7 +717,7 @@ function GetGZ(spcjd,ya,ptsa,ptsb,ptsc,tg,dz){
        //若小於jr[0],則屬於前一個節氣年
        GetPureJQsinceSpring(ty, ptsa,ptsb,ptsc,jr);     //取得自立春開始的不含中氣之12節氣  
    }else{ty=ya;}
-alert(ty);
+//alert(ty);
    switch(ty%10){
 	case 0:
 		tg[0]="庚";
@@ -794,7 +793,7 @@ alert(ty);
 	for(j=0;j<=13;j++){
 		if(jr[j] >= spcjd){ tm = j - 1; break;}		//已超過指定時刻，故應取前一個節氣
 	}
-        alert(ty);
+        //alert(tm);
 	switch(tm%12){
 		case 0:
 			dz[1]="寅";
@@ -1193,7 +1192,7 @@ var hdz= hgz % 12;    //時支
 			dz[3] ="亥";
 			break;
 	       }
-alert(tg[0]+" "+tg[1]+" "+tg[2]+" "+tg[3]+"\n"+dz[0]+" "+dz[1]+" "+dz[2]+" "+dz[3]);
+//alert(tg[0]+" "+tg[1]+" "+tg[2]+" "+tg[3]+"\n"+dz[0]+" "+dz[1]+" "+dz[2]+" "+dz[3]);
 }
 </script>
 
