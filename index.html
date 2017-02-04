@@ -1037,10 +1037,11 @@ var jda,thes,dayjd,dgz;
 //計算日柱之干支
 //jda = Jdays(op, yea, tmon, tday, thehou) + 0.5;     //加0.5是將起始點從正午改為從0點開始。
 jda=spcjd+0.5;
-alert(spcjd);
+
 thes = ((jda - Math.floor(jda)) * 86400) + 3600;    //將jd的小數部份化為秒，並加上起始點前移的一小時(3600秒)，取其整數值
 dayjd = Math.floor(jda) + thes / 86400;              //將秒數化為日數，加回到jd的整數部份
 dgz = (Math.floor(dayjd + 49) % 60 + 60) % 60;
+alert(dgz);
 var dtg=dgz % 10;
 var ddz=dgz % 12;
 	switch(dtg){
