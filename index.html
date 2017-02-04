@@ -204,8 +204,8 @@ function myFunction() {
 	var tddz=new Array;
 	GetGZ(tda,tdyy,ptsa,ptsb,ptsc,tdtg,tddz);    
 	var tdid=tgtest(otg[2],tdtg[2]);
-	document.getElementById("tengoddemo").innerHTML  ="本日值星"+tdid;
-	
+	document.getElementById("tengoddemo").innerHTML  ="本日值星"+tdid.split(";")[0];
+	document.getElementById("tengoddemo").innerHTML  =tdid.split(";")[1];
     }    
     
 	
