@@ -476,7 +476,8 @@ function ValidDate(){
                 }
 	        vd=false;
             }
-	    if(year.value ==1582 && month.value==10 && day.value>=5 &&day.value<15||hour.checkValidity()==false ||min.checkValidity()==false){
+// 	    if(year.value ==1582 && month.value==10 && day.value>=5 &&day.value<15||hour.checkValidity()==false ||min.checkValidity()==false){
+            if(year.value ==1582 && month.value==10 && day.value>=5 &&day.value<15){
                 alert("時間點不正確，請重新輸入");
                 vd=false;
 	    }
