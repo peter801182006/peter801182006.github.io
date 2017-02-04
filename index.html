@@ -793,7 +793,7 @@ function GetGZ(spcjd,ya,ptsa,ptsb,ptsc,tg,dz){
 	for(j=0;j<=13;j++){
 		if(jr[j] >= spcjd){ tm = j - 1; break;}		//已超過指定時刻，故應取前一個節氣
 	}
-        alert(j);
+        
 	switch(tm%12){
 		case 0:
 			dz[1]="寅";
@@ -1037,6 +1037,7 @@ var jda,thes,dayjd,dgz;
 //計算日柱之干支
 //jda = Jdays(op, yea, tmon, tday, thehou) + 0.5;     //加0.5是將起始點從正午改為從0點開始。
 jda=spcjd+0.5;
+alert(spcjd);
 thes = ((jda - Math.floor(jda)) * 86400) + 3600;    //將jd的小數部份化為秒，並加上起始點前移的一小時(3600秒)，取其整數值
 dayjd = Math.floor(jda) + thes / 86400;              //將秒數化為日數，加回到jd的整數部份
 dgz = (Math.floor(dayjd + 49) % 60 + 60) % 60;
