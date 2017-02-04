@@ -193,8 +193,13 @@ function myFunction() {
 	    
         //今日運勢  
 
-        var Today=new Date();
-　      document.getElementById("tengoddemo").innerHTML  ="今天日期是 " + Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日";
+        var Today=new Date();  
+	var tdyy=Number(Today.getFullYear());
+        var tdmm=Number(Today.getMonth())+1;
+        var tddd=Number(Today.getDate());
+	var tdhh=Number(Today.getHours());
+        
+　      document.getElementById("tengoddemo").innerHTML  ="今天日期是 " + Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日"+Today.getHours();
 //         if(){
 	   
 // 	}
