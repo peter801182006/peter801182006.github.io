@@ -717,7 +717,7 @@ function GetGZ(spcjd,ya,ptsa,ptsb,ptsc,tg,dz){
         ty = ya - 1;
        //若小於jr[0],則屬於前一個節氣年
        GetPureJQsinceSpring(ty, ptsa,ptsb,ptsc,jr);     //取得自立春開始的不含中氣之12節氣  
-   }
+   }else{ty=ya;}
 alert(ty);
    switch(ty%10){
 	case 0:
