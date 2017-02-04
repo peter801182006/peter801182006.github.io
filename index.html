@@ -90,13 +90,13 @@ function myFunction() {
 	    alert("時間點不正確，請重新輸入");
     } else {  
 	var a=Jdays(yy,mm,dd,hh+(mimi/60));
-        var tg=new Array;
-	var dz=new Array;
+        var otg=new Array;
+	var odz=new Array;
 
-         GetGZ(a,yy,ptsa,ptsb,ptsc,tg,dz);
+         GetGZ(a,yy,ptsa,ptsb,ptsc,otg,odz);
 	    
-	document.getElementById("demo").innerHTML  = tg[2];    
-	document.getElementById("demo2").innerHTML = dz[1]; 
+	document.getElementById("demo").innerHTML  = otg[2];    
+	document.getElementById("demo2").innerHTML = odz[1]; 
 
         //外在性格分析
         if(tg[2]=="甲"){
