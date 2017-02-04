@@ -30,6 +30,9 @@
 <p id="dzdemo"></p>
 <p>幸運色</p>
 <p id="color"></p>
+<p>今日運勢</p>
+<p id="tengoddemo"></p>
+<p id="fudemo"></p>
 <script>
 //日誌0:1/23
 //日誌1:1/24 20:00-23:50
@@ -74,6 +77,7 @@
 		"沒有衝勁，較悲觀。雞婆個性，急躁，雙重個性。熱心喜服務人群，積極主動，會較從自己利益著眼。很有審美觀，自信心、自尊心、虛榮心都很強，而且喜歡被讚美。第六感強。屬雞男性給人一種愛拈花惹草的感覺，異性緣特別好。屬雞女性多半帶點「雞婆」個性，喜歡替人出主意，喜歡湊熱鬧，人緣很好，也很重視感覺。",
 		"想當老大，易突發奇想，率性而為，而有驚人之舉，不為環境而改變，從一而終，認定人與事。講忠心，信用佳，善良，固執，重感情，是好朋友及好部屬。好惡分明，十分謹慎，戒心很強，不隨便相信人。常出現五行高手，對研究玄學很投入。人間福報好，無形福報多，常遇貴人逢凶化吉。賺錢不難，不容易缺錢，但欠缺金錢觀，難有鉅額財富。想法樂觀積極，不太會隱藏自己個性及秘密，特別喜歡照顧別人。有時會有狗改不了吃屎的習慣。死心眼，易單戀，或被戀愛衝昏頭。",
 		"很有智慧，非常注重原則，不易溝通，常把事情放心裡。外表剛毅，內心脆弱，性格矛盾，不易了解。善利用別人，借力使力，為生意高手。很明理，但常追根究底，有時會很「番」，不講道理。口才好，好辯。眼光獨特，極有開創力。很注重口腹之慾，重享受卻不挑食。會扮豬吃老虎。"];
+
 function myFunction() {
      var yy =Number(year.value);
      var mm =Number( month.value);
@@ -142,6 +146,7 @@ function myFunction() {
 	}else if(dz[1]=="亥"){
 		document.getElementById("dzdemo").innerHTML  =dzdata[11];
 	}
+	    
         //幸運色判斷  
         var sex=document.getElementById("sexid").value;
 	var sexbase=["",""];
@@ -185,14 +190,255 @@ function myFunction() {
                   +"求考運"+sexbase[1]+":"+colorbase[2]+"<br>"
                   +"求貴人"+colorbase[3]+"<br>";      
         }
+	    
+        //今日運勢  
 
-
+        var Today=new Date();
+　      document.getElementById("tengoddemo").innerHTML  ="今天日期是 " + Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日";
+        if(){
+	   
+	}
     }    
-	//1/25 07:09 yy進不去
-        
+    
 	
 }
+	   
+function tgtest(cc,uu){
+	var tengod=["七殺","正官","偏印","正印","比肩","劫財","食神","傷官","偏財","正財"];
+        var tenex=["七殺",
+		   "正官",
+		   "偏印",
+		   "正印",
+		   "比肩",
+		   "劫財",
+		   "食神",
+		   "傷官",
+		   "偏財",
+                   "正財"]
+        if(cc=="甲"){
+	           if(uu=="甲"){ 
+			   return tengod[4]+";"+tenex[4];
+		   }else if(uu=="乙"){ 
+			   return tengod[5]+";"+tenex[5];
+		   }else if(uu=="丙"){ 
+			   return tengod[6]+";"+tenex[6];
+	           }else if(uu=="丁"){ 
+			   return tengod[7]+";"+tenex[7];
+	           }else if(uu=="戊"){ 
+			   return tengod[8]+";"+tenex[8];
+                   }else if(uu=="己"){ 
+			   return tengod[9]+";"+tenex[9];
+                   }else if(uu=="庚"){ 
+			   return tengod[0]+";"+tenex[0];
+                   }else if(uu=="辛"){ 
+			   return tengod[1]+";"+tenex[1];
+                   }else if(uu=="壬"){ 
+			   return tengod[2]+";"+tenex[2];
+                   }else if(uu=="癸"){ 
+			   return tengod[3]+";"+tenex[3];
+		   }
+ 
+	}else if(cc=="乙"){
+		   if(uu=="甲"){ 
+			   return tengod[5]+";"+tenex[5];
+		   }else if(uu=="乙"){ 
+			   return tengod[4]+";"+tenex[4];
+		   }else if(uu=="丙"){ 
+			   return tengod[7]+";"+tenex[7];
+	           }else if(uu=="丁"){ 
+			   return tengod[6]+";"+tenex[6];
+	           }else if(uu=="戊"){ 
+			   return tengod[9]+";"+tenex[9];
+                   }else if(uu=="己"){ 
+			   return tengod[8]+";"+tenex[8];
+                   }else if(uu=="庚"){ 
+			   return tengod[1]+";"+tenex[1];
+                   }else if(uu=="辛"){ 
+			   return tengod[0]+";"+tenex[0];
+                   }else if(uu=="壬"){ 
+			   return tengod[3]+";"+tenex[3];
+                   }else if(uu=="癸"){ 
+			   return tengod[2]+";"+tenex[2];
+		   }
+	}else if(cc=="丙"){
+		   if(uu=="甲"){ 
+			   return tengod[2]+";"+tenex[2];
+		   }else if(uu=="乙"){ 
+			   return tengod[3]+";"+tenex[3];
+		   }else if(uu=="丙"){ 
+			   return tengod[4]+";"+tenex[4];
+	           }else if(uu=="丁"){ 
+			   return tengod[5]+";"+tenex[5];
+	           }else if(uu=="戊"){ 
+			   return tengod[6]+";"+tenex[6];
+                   }else if(uu=="己"){ 
+			   return tengod[7]+";"+tenex[7];
+                   }else if(uu=="庚"){ 
+			   return tengod[8]+";"+tenex[8];
+                   }else if(uu=="辛"){ 
+			   return tengod[9]+";"+tenex[9];
+                   }else if(uu=="壬"){ 
+			   return tengod[0]+";"+tenex[0];
+                   }else if(uu=="癸"){ 
+			   return tengod[1]+";"+tenex[1];
+		   }
+	}else if(cc=="丁"){
+		   if(uu=="甲"){ 
+			   return tengod[3]+";"+tenex[3];
+		   }else if(uu=="乙"){ 
+			   return tengod[2]+";"+tenex[2];
+		   }else if(uu=="丙"){ 
+			   return tengod[5]+";"+tenex[5];
+	           }else if(uu=="丁"){ 
+			   return tengod[4]+";"+tenex[4];
+	           }else if(uu=="戊"){ 
+			   return tengod[7]+";"+tenex[7];
+                   }else if(uu=="己"){ 
+			   return tengod[6]+";"+tenex[6];
+                   }else if(uu=="庚"){ 
+			   return tengod[9]+";"+tenex[9];
+                   }else if(uu=="辛"){ 
+			   return tengod[8]+";"+tenex[8];
+                   }else if(uu=="壬"){ 
+			   return tengod[1]+";"+tenex[1];
+                   }else if(uu=="癸"){ 
+			   return tengod[0]+";"+tenex[0];
+		   }
+	}else if(cc=="戊"){
+		   if(uu=="甲"){ 
+			   return tengod[0]+";"+tenex[0];
+		   }else if(uu=="乙"){ 
+			   return tengod[1]+";"+tenex[1];
+		   }else if(uu=="丙"){ 
+			   return tengod[2]+";"+tenex[2];
+	           }else if(uu=="丁"){ 
+			   return tengod[3]+";"+tenex[3];
+	           }else if(uu=="戊"){ 
+			   return tengod[4]+";"+tenex[4];
+                   }else if(uu=="己"){ 
+			   return tengod[5]+";"+tenex[5];
+                   }else if(uu=="庚"){ 
+			   return tengod[6]+";"+tenex[6];
+                   }else if(uu=="辛"){ 
+			   return tengod[7]+";"+tenex[7];
+                   }else if(uu=="壬"){ 
+			   return tengod[8]+";"+tenex[8];
+                   }else if(uu=="癸"){ 
+			   return tengod[9]+";"+tenex[9];
+		   }
+	}else if(cc=="己"){
+		   if(uu=="甲"){ 
+			   return tengod[1]+";"+tenex[1];
+		   }else if(uu=="乙"){ 
+			   return tengod[0]+";"+tenex[0];
+		   }else if(uu=="丙"){ 
+			   return tengod[3]+";"+tenex[3];
+	           }else if(uu=="丁"){ 
+			   return tengod[2]+";"+tenex[2];
+	           }else if(uu=="戊"){ 
+			   return tengod[5]+";"+tenex[5];
+                   }else if(uu=="己"){ 
+			   return tengod[4]+";"+tenex[4];
+                   }else if(uu=="庚"){ 
+			   return tengod[7]+";"+tenex[7];
+                   }else if(uu=="辛"){ 
+			   return tengod[6]+";"+tenex[6];
+                   }else if(uu=="壬"){ 
+			   return tengod[9]+";"+tenex[9];
+                   }else if(uu=="癸"){ 
+			   return tengod[8]+";"+tenex[8];
+		   }
+	}else if(cc=="庚"){
+		   if(uu=="甲"){ 
+			   return tengod[8]+";"+tenex[8];
+		   }else if(uu=="乙"){ 
+			   return tengod[9]+";"+tenex[9];
+		   }else if(uu=="丙"){ 
+			   return tengod[0]+";"+tenex[0];
+	           }else if(uu=="丁"){ 
+			   return tengod[1]+";"+tenex[1];
+	           }else if(uu=="戊"){ 
+			   return tengod[2]+";"+tenex[2];
+                   }else if(uu=="己"){ 
+			   return tengod[3]+";"+tenex[3];
+                   }else if(uu=="庚"){ 
+			   return tengod[4]+";"+tenex[4];
+                   }else if(uu=="辛"){ 
+			   return tengod[5]+";"+tenex[5];
+                   }else if(uu=="壬"){ 
+			   return tengod[6]+";"+tenex[6];
+                   }else if(uu=="癸"){ 
+			   return tengod[7]+";"+tenex[7];
+		   }
+	}else if(cc=="辛"){
+		   if(uu=="甲"){ 
+			   return tengod[9]+";"+tenex[9];
+		   }else if(uu=="乙"){ 
+			   return tengod[8]+";"+tenex[8];
+		   }else if(uu=="丙"){ 
+			   return tengod[1]+";"+tenex[1];
+	           }else if(uu=="丁"){ 
+			   return tengod[0]+";"+tenex[0];
+	           }else if(uu=="戊"){ 
+			   return tengod[3]+";"+tenex[3];
+                   }else if(uu=="己"){ 
+			   return tengod[2]+";"+tenex[2];
+                   }else if(uu=="庚"){ 
+			   return tengod[5]+";"+tenex[5];
+                   }else if(uu=="辛"){ 
+			   return tengod[4]+";"+tenex[4];
+                   }else if(uu=="壬"){ 
+			   return tengod[7]+";"+tenex[7];
+                   }else if(uu=="癸"){ 
+			   return tengod[6]+";"+tenex[6];
+		   }
+	}else if(cc=="壬"){
+                   if(uu=="甲"){ 
+			   return tengod[6]+";"+tenex[6];
+		   }else if(uu=="乙"){ 
+			   return tengod[7]+";"+tenex[7];
+		   }else if(uu=="丙"){ 
+			   return tengod[8]+";"+tenex[8];
+	           }else if(uu=="丁"){ 
+			   return tengod[9]+";"+tenex[9];
+	           }else if(uu=="戊"){ 
+			   return tengod[0]+";"+tenex[0];
+                   }else if(uu=="己"){ 
+			   return tengod[1]+";"+tenex[1];
+                   }else if(uu=="庚"){ 
+			   return tengod[2]+";"+tenex[2];
+                   }else if(uu=="辛"){ 
+			   return tengod[3]+";"+tenex[3];
+                   }else if(uu=="壬"){ 
+			   return tengod[4]+";"+tenex[4];
+                   }else if(uu=="癸"){ 
+			   return tengod[5]+";"+tenex[5];
+		   }
+	}else if(cc=="癸"){
+                   if(uu=="甲"){ 
+			   return tengod[7]+";"+tenex[7];
+		   }else if(uu=="乙"){ 
+			   return tengod[6]+";"+tenex[6];
+		   }else if(uu=="丙"){ 
+			   return tengod[9]+";"+tenex[9];
+	           }else if(uu=="丁"){ 
+			   return tengod[8]+";"+tenex[8];
+	           }else if(uu=="戊"){ 
+			   return tengod[1]+";"+tenex[1];
+                   }else if(uu=="己"){ 
+			   return tengod[0]+";"+tenex[0];
+                   }else if(uu=="庚"){ 
+			   return tengod[3]+";"+tenex[3];
+                   }else if(uu=="辛"){ 
+			   return tengod[2]+";"+tenex[2];
+                   }else if(uu=="壬"){ 
+			   return tengod[5]+";"+tenex[5];
+                   }else if(uu=="癸"){ 
+			   return tengod[4]+";"+tenex[4];
+		   }
+	}
 
+}
 //ValidDate()已於1/24上午6:35確認可執行
 function ValidDate(){
         var vd=true;
