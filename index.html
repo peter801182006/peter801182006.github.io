@@ -11,10 +11,12 @@
 <p>請輸入日期:</p>
 
 <input id="did" type="number" min="1" max="31" required>
+<!--	
 <p>請輸入時間點:(時間點不知道可以任挑)</p>
 
 <input id="hid" type="number" min="0" max="23" required><p>時</p>
 <input id="miid" type="number" min="0" max="59" required><p>分</p>
+-->
 <p>性別: (請輸入男或女即可)</p>
 <input id="sexid" type="text">
 <br>
@@ -82,14 +84,17 @@ function myFunction() {
      var yy =Number(year.value);
      var mm =Number( month.value);
      var dd =Number( day.value);
-     var hh= Number(hour.value);
-     var mimi= Number(min.value);
+//      var hh= Number(hour.value);
+//      var mimi= Number(min.value);
 //      alert(typeof(yy));
     if (!ValidDate()) {
 //         document.getElementById("demo").innerHTML ="時間點不正確，請重新輸入" ;
 	    alert("時間點不正確，請重新輸入");
     } else {  
-	var a=Jdays(yy,mm,dd,hh+(mimi/60));
+	
+	//var a=Jdays(yy,mm,dd,hh+(mimi/60));
+        var a=Jdays(yy,mm,dd,12+(0/60));
+	    
         var otg=new Array;
 	var odz=new Array;
 
