@@ -1,0 +1,64 @@
+@import url(//fonts.googleapis.com/earlyaccess/cwtexkai.css);
+.menufixed{
+/*    position: fixed;  */
+   top: 0; 
+   right: 0;
+   z-index:1000;
+   width:100%;
+   padding:5px;
+   height:40px;
+   font-size: 30px;
+   font-family: 'cwTeXKai', serif;
+   margin:0;
+  padding:0;
+  bord:0;
+/*    display: inline; */
+   background-color:#FFDD55;
+  
+}
+.child{
+/*   background-color:blue; */
+  display:inline;
+  height:100%;
+
+}
+
+#s {
+  
+/*   position: absolute; */
+  top:60px;
+  z-index:-1;
+  display:inline-block;
+}
+#aboutme{
+  width:100;
+  height:400px;
+  hegiht:300px;
+  font-size:250%;
+  color:red;
+  background-color:blue;
+}
+
+#ex{
+  width:100%;
+  font-size:250%;
+  color:red;
+  background-color:yellow;
+}
+#works{
+  width:100%;
+  font-size:250%;
+  color:red;
+  background-color:black;
+}
+#contact{
+  width:100%;
+  font-size:250%;
+  color:red;
+  background-color:green;
+}
+
+footer{
+  position:relative;
+
+}
