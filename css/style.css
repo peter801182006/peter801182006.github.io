@@ -1,64 +1,150 @@
-@import url(//fonts.googleapis.com/earlyaccess/cwtexkai.css);
-.menufixed{
-/*    position: fixed;  */
-   top: 0; 
-   right: 0;
-   z-index:1000;
-   width:100%;
-   padding:5px;
-   height:40px;
-   font-size: 30px;
-   font-family: 'cwTeXKai', serif;
-   margin:0;
-  padding:0;
-  bord:0;
-/*    display: inline; */
-   background-color:#FFDD55;
-  
+body, html {
+  height: 100%;
+  margin: 0 auto;
 }
-.child{
-/*   background-color:blue; */
-  display:inline;
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.imgadress{
+  background-repeat: no-repeat;
+   background-image:url(http://app-1494338183.000webhostapp.com/me.jpg);
+}
+.parallax { 
+  /* The image used */
+  background-image:url("http://app-1494338183.000webhostapp.com/sky.jpg");
+  /* Full height */
+  height: 50%; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.centerblock{
+  position: absolute;
+  left: 0;
+  top: 25%;
+  width: 100%;
+  text-align:center;
+  display: block;
+}
+.centerblock2{
+  left: 0;
+  top: 75%;
+  width: 100%;
   height:100%;
-
+  text-align:center;
+  display: block;
+  padding:50px;
+}
+.bigfont{
+/*   background-color: #888888; */
+  color: #fff;
+  padding-top: 18px;
+  padding-right: 18px;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  font-size:80px;
+}
+.bigfont2{
+/*   background-color: #888888; */
+  top:50%;
+  height:50%;
+  color: #fff;
+  padding-top: 18px;
+  padding-right: 18px;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  font-size:80px;
+}
+.contentsection{
+  width: 100%;
+  height:50%;
+  display:flex;
+}
+.contentdiv{
+  padding:50px;
+  height:100%;
+}
+@media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
 }
 
-#s {
+.bordertype{
+  border-style:solid;
+  font-size:28px;
+}
+.bg1{
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+.bg2{
   
-/*   position: absolute; */
-  top:60px;
-  z-index:-1;
-  display:inline-block;
 }
-#aboutme{
-  width:100;
-  height:400px;
-  hegiht:300px;
-  font-size:250%;
-  color:red;
-  background-color:blue;
-}
-
-#ex{
-  width:100%;
-  font-size:250%;
-  color:red;
-  background-color:yellow;
-}
-#works{
-  width:100%;
-  font-size:250%;
-  color:red;
-  background-color:black;
-}
-#contact{
-  width:100%;
-  font-size:250%;
-  color:red;
-  background-color:green;
-}
-
 footer{
-  position:relative;
+  background-color:#444444;
+  color: #ffffff;
+}
+.fonttype1{
+  font-size:26px;
+}
+.fonttype2{
+  font-size:24px;
+}
+/* Three columns side by side */
+.column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
 
+/* Display the columns below each other instead of side by side on small screens */
+@media (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+    padding: 0 16px;
+  
+}
+
+/* Clear floats */
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+    font-size:28px;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
 }
